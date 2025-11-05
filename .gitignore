@@ -5,3 +5,4 @@ __pycache__/
 data/mtsd/
 *.parquet
 *.ndjson
+AGENTS.md
