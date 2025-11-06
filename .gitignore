@@ -1,8 +1,25 @@
+# Python artifacts
 __pycache__/
-*.pyc
+*.py[cod]
+
+# Virtual environments & local config
 .env
-.venv
-data/mtsd/
+.venv/
+env/
+
+# Training outputs / models
+runs/
+weights/
+checkpoints/
+*.pt
+*.onnx
+
+# Data: keep only tiny samples under version control
+data/
+!data/sample/
+!data/sample/**
+
+# Local exports
 *.parquet
 *.ndjson
-AGENTS.md
+exports/
