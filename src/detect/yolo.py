@@ -18,7 +18,7 @@ def train(
     overrides = overrides or {}
     yolo = YOLO(str(model))
     yolo.train(data=str(data), project=project, name=name, **overrides)
-    yolo.val(data=str(data), batch=8)
+    # yolo.val(data=str(data), batch=8)
 
 
 def parse_overrides(pairs: list[str]) -> Dict[str, Any]:
