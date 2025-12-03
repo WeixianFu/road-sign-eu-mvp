@@ -1,0 +1,26 @@
+# YOLOv8 Inference Configuration
+# Purpose: Defines settings for model inference on videos/images
+# This configuration is used by the inference pipeline to process input videos
+
+# Model weight path (trained model checkpoint)
+model: runs/mtsd/yolov8m_mtsd/weights/best.pt
+
+# Confidence threshold (detections below this will be filtered)
+conf: 0.25
+
+# IoU threshold for NMS (Non-Maximum Suppression)
+iou: 0.45
+
+# Image size for inference (can be different from training size)
+imgsz: 640
+
+# Device for inference (0 for GPU 0, cpu for CPU)
+device: 0
+
+# Output format for results (ndjson, parquet, both)
+output_format: both
+
+# Output directory for results
+output_dir: outputs
+
+# Additional inference parameters can be added here

@@ -1,0 +1,16 @@
+# MTSD Dataset Configuration
+# Purpose: Defines dataset paths, class names, and data structure for YOLOv8 training
+# This file is used by Ultralytics YOLO to locate training and validation data
+
+# Dataset root path
+path: /Users/weixianfu/Documents/Datas/mtsd
+
+# Training data paths (relative to 'path')
+# Options: train_full/images or train_partial/images
+train: train_full/images
+
+# Validation data path (relative to 'path')
+val: val/images
+
+# Class names will be loaded from classes.json at the dataset root
+# The classes.json file contains all 401 class names in MTSD format

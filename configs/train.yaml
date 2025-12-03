@@ -1,0 +1,29 @@
+# YOLOv8 Training Configuration
+# Purpose: Defines hyperparameters and training settings for YOLOv8 model training
+# This configuration is used by the training script to set up model training
+
+# Model architecture (yolov8n, yolov8s, yolov8m, yolov8l, yolov8x)
+model: yolov8m.pt
+
+# Image size for training (will be resized to this size)
+imgsz: 640
+
+# Batch size (adjust based on GPU memory: 16GB GPU can handle batch=12-16 for yolov8m)
+batch: 12
+
+# Number of training epochs
+epochs: 100
+
+# Device (0 for GPU 0, cpu for CPU, or list of GPUs)
+device: 0
+
+# Number of workers for data loading
+workers: 4
+
+# Project directory for saving results
+project: runs/mtsd
+
+# Experiment name
+name: yolov8m_mtsd
+
+# Additional training parameters can be added here

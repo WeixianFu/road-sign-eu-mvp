@@ -1,25 +1,93 @@
-# Python artifacts
+# Python
 __pycache__/
 *.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# Virtual environments & local config
-.env
-.venv/
+# Virtual environments
+venv/
 env/
+ENV/
+.venv
 
-# Training outputs / models
-runs/
-weights/
-checkpoints/
-*.pt
-*.onnx
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# Data: keep only tiny samples under version control
-data/
-!data/sample/
-!data/sample/**
+# Jupyter Notebook
+.ipynb_checkpoints
 
-# Local exports
+# Images and media files
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.ico
+*.svg
+*.webp
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Data files
+*.csv
 *.parquet
 *.ndjson
-exports/
+*.jsonl
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+
+# Model files
+*.pt
+*.pth
+*.ckpt
+*.weights
+*.onnx
+*.pb
+
+# Logs and outputs
+*.log
+logs/
+outputs/
+runs/
+wandb/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+original_image.png
+annotated_image.png
+
+# Data directories (keep structure but ignore content)
+data/sample/**/*
+!data/sample/.gitkeep

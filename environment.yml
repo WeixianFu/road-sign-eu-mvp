@@ -1,0 +1,46 @@
+# Conda environment configuration for road-sign-eu-mvp
+# Purpose: Create a reproducible environment for training and inference
+# Usage: conda env create -f environment.yml
+#        conda activate road-sign-eu-mvp
+
+name: road-sign
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    # PyTorch - supports MPS (Metal) on Mac, CUDA on server
+    # Mac: MPS acceleration available automatically
+    # Server: Install CUDA version manually if needed
+    - torch>=2.0.0  # Deep learning framework, supports MPS on Mac
+    - torchvision>=0.15.0  # Computer vision utilities for PyTorch
+    - torchaudio>=2.0.0  # Audio processing (required by torchvision)
+    
+    # YOLOv8 detection model
+    - ultralytics>=8.0.0  # YOLOv8 implementation for object detection
+    
+    # Video I/O and timestamp processing
+    - av>=10.0.0  # PyAV - FFmpeg bindings for video decoding and PTS-based timestamps
+    
+    # Image processing
+    - opencv-python>=4.8.0  # Computer vision library for image operations
+    
+    # Data processing and export
+    - pandas>=2.0.0  # Data manipulation and analysis
+    - pyarrow>=14.0.0  # Parquet file format support for efficient data export
+    - numpy>=1.24.0  # Numerical computing library
+    
+    # Configuration and utilities
+    - pyyaml>=6.0  # YAML file parsing for configuration files
+    - tqdm>=4.65.0  # Progress bars for long-running operations
+    
+    # Jupyter and visualization (for data exploration)
+    - jupyter>=1.0.0  # Jupyter notebook environment
+    - ipykernel>=6.25.0  # IPython kernel for Jupyter, enables conda env in Jupyter
+    - matplotlib>=3.7.0  # Plotting library for visualization
+    - pillow>=10.0.0  # PIL - Image processing library
