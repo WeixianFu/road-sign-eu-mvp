@@ -10,3 +10,7 @@ Future implementation:
     - read_video: Read video frames with PTS-based timestamps
     - Image loading utilities (if needed)
 """
+
+from .slicer import slice_image
+
+__all__ = ['slice_image']
