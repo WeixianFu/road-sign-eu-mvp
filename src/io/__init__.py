@@ -12,5 +12,6 @@ Future implementation:
 """
 
 from .slicer import slice_image
+from .slicer import slice_labels
 
-__all__ = ['slice_image']
+__all__ = ['slice_image', 'slice_labels']
