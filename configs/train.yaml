@@ -6,7 +6,7 @@
 model: yolov8m.pt
 
 # Image size for training (will be resized to this size)
-imgsz: 640
+imgsz: 1280
 
 # Batch size (adjust based on GPU memory: 16GB GPU can handle batch=12-16 for yolov8m)
 batch: 12
@@ -19,6 +19,12 @@ device: 0
 
 # Number of workers for data loading
 workers: 4
+
+# Augmentation hyperparameters per core constraints
+mosaic: 1.0       # keep enabled early to mix context
+scale: 0.2        # restrict scaling (0.8~1.2) to protect tiny 22px signs
+degrees: 0.0      # no rotation to avoid shape distortion
+close_mosaic: 10  # disable mosaic in last epochs for natural distribution
 
 # Project directory for saving results
 project: runs/mtsd
