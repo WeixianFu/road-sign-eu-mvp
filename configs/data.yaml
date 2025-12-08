@@ -5,6 +5,9 @@
 # Dataset root path
 path: /Users/weixianfu/Documents/Datas/mtsd
 
+# Sliced and resized dataset root path
+path_sliced_resized: /Users/weixianfu/Documents/Datas/mtsd-resized
+
 # Training data paths (relative to 'path')
 # Options: train_full/images or train_partial/images
 train: train_full/images
@@ -12,5 +15,4 @@ train: train_full/images
 # Validation data path (relative to 'path')
 val: val/images
 
-# Class names will be loaded from classes.json at the dataset root
-# The classes.json file contains all 401 class names in MTSD format
+

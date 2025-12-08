@@ -85,7 +85,7 @@ def slice_labels(
     image_shape: Tuple[int, int] | None = None,
     label_lines: List[str] | None = None,
     min_abs_area: int = 100,
-    min_area_ratio: float = 0.2
+    min_area_ratio: float = 0.6
 ) -> List[str]:
     """
     Project original YOLO labels into a sliced patch without saving files.
@@ -215,6 +215,8 @@ def save_slices_and_resized(
     output_dir: str,
     slice_size: int = 1280,
     overlap: float = 0.2,
+    min_abs_area: int = 100,
+    min_area_ratio: float = 0.6,
     resize_size: int = 1280
 ) -> None:
     """
@@ -259,7 +261,9 @@ def save_slices_and_resized(
             str(image_path),
             box,
             image_shape=(h, w),
-            label_lines=label_lines
+            label_lines=label_lines,
+            min_abs_area=min_abs_area,
+            min_area_ratio=min_area_ratio
         )
         label_out_path = labels_dir / f"{name}.txt"
         with open(label_out_path, "w", encoding="utf-8") as f:
@@ -289,6 +293,9 @@ def save_slices_and_resized(
         abs_cy = abs_cy * scale + pad_y
         abs_bw = abs_bw * scale
         abs_bh = abs_bh * scale
+
+        if abs_bw * abs_bh < min_abs_area:
+            continue
 
         # re-normalize to target canvas (resize_size x resize_size)
         new_cx = abs_cx / resize_size
