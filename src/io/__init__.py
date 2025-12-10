@@ -11,7 +11,6 @@ Future implementation:
     - Image loading utilities (if needed)
 """
 
-from .slicer import slice_image
-from .slicer import slice_labels
+from .slicer import process_image
 
-__all__ = ['slice_image', 'slice_labels']
+__all__ = ['process_image']
