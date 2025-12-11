@@ -173,7 +173,7 @@ def process_image(name: str, input_path: Path = INPUT_PATH+"/"+MTSD_TYPES[0], ou
 
     image = cv2.imread(str(image_path))
     if image is None:
-        raise ValueError(f"无法读取图片文件: {image_path}")
+        raise ValueError(f"unable to read image: {image_path}")
     image_shape = image.shape[:2]
     label_iter = list(_find_labels(input_path, name))
 
@@ -186,11 +186,46 @@ def process_image(name: str, input_path: Path = INPUT_PATH+"/"+MTSD_TYPES[0], ou
     # Save resized full image
     resized, scale, pad_x, pad_y = _resized_letterbox(image, target_size)
     resized_name = f"{name}_F"
-    resized_img_path = output_path / "images" / f"{resized_name}.jpg"
-    cv2.imwrite(str(resized_img_path), resized)
     resized_labels = _transform_labels_for_resized(label_iter, image_shape, scale, pad_x, pad_y, \
     target_size, min_abs_area, min_area_ratio)
     _write_if_labels(resized_labels, save_path=output_path, save_name=resized_name, image=resized)
+
+    
+
+def _write_image_and_labels(save_path: Path, save_name: str, image: np.ndarray, labels: List[str]) -> None:
+    img_path = save_path / "images" / f"{save_name}.jpg"
+    cv2.imwrite(str(img_path), image)
+    label_path = save_path / "labels" / f"{save_name}.txt"
+    with open(label_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(labels))
+
+def process_val_image(name: str, input_path: Path = INPUT_PATH+"/"+MTSD_TYPES[2], 
+    output_path: Path = OUTPUT_PATH+"/"+MTSD_TYPES[2], 
+    target_size: int = TARGET_SIZE, overlap: float = OVERLAP,
+    min_abs_area: int = MIN_ABS_AREA, min_area_ratio: float = MIN_AREA_RATIO) -> None:
+    """处理val数据集：无条件保存所有切片和F图片，有labels则保存labels"""
+    input_path, output_path = Path(input_path), Path(output_path)
+    _prepare_output(output_path)
+    image_path = _find_image(input_path, name)
+
+    image = cv2.imread(str(image_path))
+    if image is None:
+        raise ValueError(f"unable to read image: {image_path}")
+    image_shape = image.shape[:2]
+    label_iter = list(_find_labels(input_path, name))
+
+    # 切分图片
+    slices = _slice_image(image, target_size, overlap)
+    for idx, (patch, box) in enumerate(slices):
+        slice_labels = _slice_labels_from_slice_box(image_shape=image_shape, slice_box=box,
+            labels=label_iter, min_abs_area=min_abs_area, min_area_ratio=min_area_ratio)
+        _write_image_and_labels(output_path, f"{name}_{idx}", patch, slice_labels)
+    
+    # 保存resize后的完整图片
+    resized, scale, pad_x, pad_y = _resized_letterbox(image, target_size)
+    resized_labels = _transform_labels_for_resized(label_iter, image_shape, scale, pad_x, pad_y,
+        target_size, min_abs_area, min_area_ratio)
+    _write_image_and_labels(output_path, f"{name}_F", resized, resized_labels)
 
 
 if __name__ == "__main__":
