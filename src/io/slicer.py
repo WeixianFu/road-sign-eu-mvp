@@ -1,4 +1,4 @@
-import shutil, yaml
+import shutil, yaml, json
 from pathlib import Path
 from typing import Iterable, List, Tuple
 
@@ -41,8 +41,11 @@ def _find_labels(input_dir: Path, name: str) -> List[str]:
         yield cls, cx, cy, bw, bh
     pass
 
-def _prepare_output(target_dir: Path) -> None:
-    for name in ("images", "labels"):
+def _prepare_output(target_dir: Path, with_index: bool = False) -> None:
+    folders = ["images", "labels"]
+    if with_index:
+        folders.append("index")
+    for name in folders:
         sub = Path(target_dir) / name
         if sub.exists():
             continue
@@ -203,29 +206,50 @@ def process_val_image(name: str, input_path: Path = INPUT_PATH+"/"+MTSD_TYPES[2]
     output_path: Path = OUTPUT_PATH+"/"+MTSD_TYPES[2], 
     target_size: int = TARGET_SIZE, overlap: float = OVERLAP,
     min_abs_area: int = MIN_ABS_AREA, min_area_ratio: float = MIN_AREA_RATIO) -> None:
-    """处理val数据集：无条件保存所有切片和F图片，有labels则保存labels"""
+    """处理val数据集：无条件保存所有切片和F图片，有labels则保存labels，并生成索引JSON"""
     input_path, output_path = Path(input_path), Path(output_path)
-    _prepare_output(output_path)
+    _prepare_output(output_path, with_index=True)
     image_path = _find_image(input_path, name)
 
     image = cv2.imread(str(image_path))
     if image is None:
         raise ValueError(f"unable to read image: {image_path}")
-    image_shape = image.shape[:2]
+    h, w = image.shape[:2]
+    image_shape = (h, w)
     label_iter = list(_find_labels(input_path, name))
 
-    # 切分图片
+    # 切分图片并记录ROI
     slices = _slice_image(image, target_size, overlap)
+    slice_info = []
     for idx, (patch, box) in enumerate(slices):
+        x1, y1, x2, y2 = box
         slice_labels = _slice_labels_from_slice_box(image_shape=image_shape, slice_box=box,
             labels=label_iter, min_abs_area=min_abs_area, min_area_ratio=min_area_ratio)
         _write_image_and_labels(output_path, f"{name}_{idx}", patch, slice_labels)
+        slice_info.append({
+            "filename": f"{name}_{idx}.jpg",
+            "roi": [x1, y1, x2, y2]
+        })
     
     # 保存resize后的完整图片
     resized, scale, pad_x, pad_y = _resized_letterbox(image, target_size)
     resized_labels = _transform_labels_for_resized(label_iter, image_shape, scale, pad_x, pad_y,
         target_size, min_abs_area, min_area_ratio)
     _write_image_and_labels(output_path, f"{name}_F", resized, resized_labels)
+    
+    # 保存索引JSON
+    index_data = {
+        "original_shape": [h, w],
+        "slices": slice_info,
+        "full_resized": {
+            "filename": f"{name}_F.jpg",
+            "scale_factor": float(scale),
+            "padding": [float(pad_x), float(pad_y)]
+        }
+    }
+    index_file = output_path / "index" / f"{name}.json"
+    with open(index_file, "w", encoding="utf-8") as f:
+        json.dump(index_data, f, indent=2, ensure_ascii=False)
 
 
 if __name__ == "__main__":
