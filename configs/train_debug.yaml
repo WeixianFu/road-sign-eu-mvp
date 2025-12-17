@@ -1,22 +1,24 @@
-# YOLOv8 Training Configuration (CUDA Server - Production)
-# Purpose: Full training on CUDA server with complete hyperparameters
-# Usage: yolo train cfg=configs/train.yaml data=configs/data.yaml
+# YOLOv8 Training Configuration (MacBook M3 Max - Debug/Overfit Test)
+# Purpose: Aggressive settings for overfitting test to verify pipeline
+# Usage: yolo train cfg=configs/train_debug.yaml data=configs/data.yaml
 
 # =============================================================================
 # Model & Input
 # =============================================================================
-model: yolov8m.pt
-imgsz: 1280  # MUST match tile size, do not change
+model: yolov8s.pt  # Smaller model for faster iteration
+imgsz: 1280        # MUST match tile size, do not change
 
 # =============================================================================
-# Training Control
+# Training Control (Aggressive for M3 Max 48GB)
 # =============================================================================
-epochs: 150
-batch: 16        # Adjust per GPU VRAM (24GB -> 16, 48GB -> 32)
-device: 0        # Single GPU, or [0,1,2,3] for multi-GPU
-workers: 8
-patience: 50     # Early stopping patience
-cache: True      # RAM cache for faster training
+epochs: 50         # Enough for overfitting test
+batch: 12          # M3 Max 48GB unified memory can handle this
+device: mps        # Metal Performance Shaders
+workers: 8         # 12 performance cores available
+cache: True        # 48GB RAM, cache everything
+
+# NO EARLY STOPPING - run all epochs for overfitting verification
+# patience is not set, will run full epochs
 
 # =============================================================================
 # Optimizer
@@ -35,7 +37,7 @@ warmup_bias_lr: 0.1
 # =============================================================================
 # Mosaic
 mosaic: 1.0
-close_mosaic: 10
+close_mosaic: 5    # Shorter for debug runs
 
 # Scale - CRITICAL: 0.1 means [0.9x, 1.1x], protects 20px tiny objects
 scale: 0.1
@@ -47,8 +49,8 @@ perspective: 0.0
 mixup: 0.0
 
 # Flip
-flipud: 0.0      # No vertical flip (signs have orientation)
-fliplr: 0.5      # Horizontal flip OK
+flipud: 0.0        # No vertical flip (signs have orientation)
+fliplr: 0.5        # Horizontal flip OK
 
 # Color (default values, safe for multi-scale objects)
 hsv_h: 0.015
@@ -59,4 +61,5 @@ hsv_v: 0.4
 # Output
 # =============================================================================
 project: runs/mtsd
-name: yolov8m_production
+name: yolov8s_debug
+
