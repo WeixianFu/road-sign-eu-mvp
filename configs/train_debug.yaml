@@ -16,9 +16,7 @@ batch: 12          # M3 Max 48GB unified memory can handle this
 device: mps        # Metal Performance Shaders
 workers: 8         # 12 performance cores available
 cache: True        # 48GB RAM, cache everything
-
-# NO EARLY STOPPING - run all epochs for overfitting verification
-# patience is not set, will run full epochs
+patience: 0        # Disable early stopping, run all epochs
 
 # =============================================================================
 # Optimizer
@@ -56,6 +54,9 @@ fliplr: 0.5        # Horizontal flip OK
 hsv_h: 0.015
 hsv_s: 0.7
 hsv_v: 0.4
+
+# Random erasing - DISABLED for small object detection
+erasing: 0.0
 
 # =============================================================================
 # Output
