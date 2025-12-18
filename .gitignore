@@ -87,6 +87,10 @@ outputs/
 runs/
 wandb/
 
+# Training scripts output
+scripts/train.log
+scripts/train.pid
+
 # OS
 .DS_Store
 Thumbs.db
