@@ -1,44 +1,69 @@
 """
 FullImageValidator: 基于切片元数据评估 YOLOv8 在 4K 原图上的真实性能。
 
-读取已有切片和元数据 JSON，推理后通过坐标映射还原到原图，计算 mAP。
+读取已有切片和元数据 JSON，推理后通过坐标映射还原到原图。
+使用 YOLO 格式的 GT labels 计算 mAP，无需 COCO 格式。
 """
 
 import json
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Tuple
 
 import numpy as np
 import torch
 import torchvision
 from tqdm import tqdm
 from ultralytics import YOLO
-from pycocotools.coco import COCO
-from pycocotools.cocoeval import COCOeval
+
+
+def compute_iou(box1: np.ndarray, box2: np.ndarray) -> float:
+    """计算两个 xyxy 格式 box 的 IoU"""
+    x1 = max(box1[0], box2[0])
+    y1 = max(box1[1], box2[1])
+    x2 = min(box1[2], box2[2])
+    y2 = min(box1[3], box2[3])
+    
+    inter = max(0, x2 - x1) * max(0, y2 - y1)
+    area1 = (box1[2] - box1[0]) * (box1[3] - box1[1])
+    area2 = (box2[2] - box2[0]) * (box2[3] - box2[1])
+    union = area1 + area2 - inter
+    
+    return inter / union if union > 0 else 0
+
+
+def compute_ap(recalls: np.ndarray, precisions: np.ndarray) -> float:
+    """计算 AP (Average Precision) 使用 11 点插值法"""
+    ap = 0.0
+    for t in np.arange(0, 1.1, 0.1):
+        mask = recalls >= t
+        if mask.any():
+            ap += precisions[mask].max()
+    return ap / 11
 
 
 class FullImageValidator:
     def __init__(
         self,
-        model_path: str,
+        model,  # Can be YOLO object or path string
         index_dir: str,
         images_dir: str,
-        gt_path: str,
+        gt_labels_dir: str,  # YOLO 格式 labels 目录
         conf_thresh: float = 0.001,
         iou_thresh: float = 0.5,
+        device: str = None,
     ):
-        self.model = YOLO(model_path)
+        # Support both YOLO object and path string
+        if isinstance(model, str):
+            self.model = YOLO(model)
+        else:
+            self.model = model
+        
         self.index_dir = Path(index_dir)
         self.images_dir = Path(images_dir)
-        self.gt_path = gt_path
+        self.gt_labels_dir = Path(gt_labels_dir)
         self.conf_thresh = conf_thresh
         self.iou_thresh = iou_thresh
-        
-        self.coco_gt = COCO(gt_path)
-        # 建立 filename -> image_id 映射
-        self.filename_to_id = {
-            img["file_name"]: img["id"] for img in self.coco_gt.imgs.values()
-        }
+        self.device = device
 
     def _load_index(self, image_id: str) -> Dict[str, Any]:
         """加载单个 image_id 的索引 JSON"""
@@ -46,9 +71,30 @@ class FullImageValidator:
         with open(index_file, "r", encoding="utf-8") as f:
             return json.load(f)
 
-    def _map_slice_to_original(
-        self, boxes: np.ndarray, roi: List[int]
-    ) -> np.ndarray:
+    def _load_yolo_gt(self, image_id: str, img_w: int, img_h: int) -> List[Tuple[int, np.ndarray]]:
+        """加载 YOLO 格式 GT labels，返回 [(cls_id, xyxy_box), ...]"""
+        label_path = self.gt_labels_dir / f"{image_id}.txt"
+        if not label_path.exists():
+            return []
+        
+        gt_boxes = []
+        with open(label_path, "r") as f:
+            for line in f:
+                parts = line.strip().split()
+                if len(parts) < 5:
+                    continue
+                cls_id = int(parts[0])
+                cx, cy, w, h = map(float, parts[1:5])
+                # 归一化 -> 绝对坐标 (xyxy)
+                x1 = (cx - w / 2) * img_w
+                y1 = (cy - h / 2) * img_h
+                x2 = (cx + w / 2) * img_w
+                y2 = (cy + h / 2) * img_h
+                gt_boxes.append((cls_id, np.array([x1, y1, x2, y2])))
+        
+        return gt_boxes
+
+    def _map_slice_to_original(self, boxes: np.ndarray, roi: List[int]) -> np.ndarray:
         """将切片坐标映射回原图坐标 (xyxy 格式)"""
         x1, y1, _, _ = roi
         mapped = boxes.copy()
@@ -64,14 +110,11 @@ class FullImageValidator:
         """将 letterbox resized 图的坐标映射回原图坐标 (xyxy 格式)"""
         pad_x, pad_y = padding
         mapped = boxes.copy()
-        # 去掉 padding
         mapped[:, 0] -= pad_x
         mapped[:, 1] -= pad_y
         mapped[:, 2] -= pad_x
         mapped[:, 3] -= pad_y
-        # 缩放回原图
         mapped /= scale
-        # 裁剪到原图范围
         h, w = original_shape
         mapped[:, 0] = np.clip(mapped[:, 0], 0, w)
         mapped[:, 1] = np.clip(mapped[:, 1], 0, h)
@@ -79,9 +122,7 @@ class FullImageValidator:
         mapped[:, 3] = np.clip(mapped[:, 3], 0, h)
         return mapped
 
-    def _global_nms(
-        self, boxes: np.ndarray, scores: np.ndarray, classes: np.ndarray
-    ) -> tuple:
+    def _global_nms(self, boxes: np.ndarray, scores: np.ndarray, classes: np.ndarray) -> tuple:
         """按类别执行全局 NMS"""
         if len(boxes) == 0:
             return boxes, scores, classes
@@ -105,10 +146,11 @@ class FullImageValidator:
             np.concatenate(keep_classes) if keep_classes else np.array([]),
         )
 
-    def _process_single_image(self, image_id: str) -> List[Dict[str, Any]]:
-        """处理单张原图：推理所有切片 -> 坐标映射 -> 全局 NMS -> 返回 COCO 格式结果"""
+    def _process_single_image(self, image_id: str) -> Tuple[np.ndarray, np.ndarray, np.ndarray, List]:
+        """处理单张原图，返回 (pred_boxes, pred_scores, pred_classes, gt_boxes_list)"""
         index_data = self._load_index(image_id)
         original_shape = index_data["original_shape"]  # [h, w]
+        h, w = original_shape
         
         all_boxes, all_scores, all_classes = [], [], []
 
@@ -117,7 +159,7 @@ class FullImageValidator:
             img_path = self.images_dir / slice_info["filename"]
             roi = slice_info["roi"]
             
-            results = self.model.predict(str(img_path), conf=self.conf_thresh, verbose=False)
+            results = self.model.predict(str(img_path), conf=self.conf_thresh, verbose=False, device=self.device)
             result = results[0]
             
             if len(result.boxes) == 0:
@@ -127,7 +169,6 @@ class FullImageValidator:
             scores = result.boxes.conf.cpu().numpy()
             classes = result.boxes.cls.cpu().numpy()
             
-            # 映射到原图坐标
             boxes = self._map_slice_to_original(boxes, roi)
             
             all_boxes.append(boxes)
@@ -138,7 +179,7 @@ class FullImageValidator:
         full_info = index_data["full_resized"]
         img_path = self.images_dir / full_info["filename"]
         
-        results = self.model.predict(str(img_path), conf=self.conf_thresh, verbose=False)
+        results = self.model.predict(str(img_path), conf=self.conf_thresh, verbose=False, device=self.device)
         result = results[0]
         
         if len(result.boxes) > 0:
@@ -156,74 +197,141 @@ class FullImageValidator:
 
         # 合并并执行全局 NMS
         if not all_boxes:
-            return []
+            pred_boxes = np.array([]).reshape(0, 4)
+            pred_scores = np.array([])
+            pred_classes = np.array([])
+        else:
+            all_boxes = np.concatenate(all_boxes)
+            all_scores = np.concatenate(all_scores)
+            all_classes = np.concatenate(all_classes)
+            pred_boxes, pred_scores, pred_classes = self._global_nms(all_boxes, all_scores, all_classes)
+
+        # 加载 GT
+        gt_boxes = self._load_yolo_gt(image_id, w, h)
+        
+        return pred_boxes, pred_scores, pred_classes, gt_boxes
+
+    def _compute_metrics(
+        self, 
+        all_preds: List[Tuple[np.ndarray, np.ndarray, np.ndarray]], 
+        all_gts: List[List[Tuple[int, np.ndarray]]],
+        iou_thresh: float
+    ) -> Tuple[float, float, float]:
+        """计算 Precision, Recall, AP@iou_thresh"""
+        # 收集所有预测和 GT
+        pred_list = []  # [(score, cls, box, img_idx), ...]
+        gt_list = []    # [(cls, box, img_idx, matched), ...]
+        
+        for img_idx, (preds, gts) in enumerate(zip(all_preds, all_gts)):
+            boxes, scores, classes = preds
+            for i in range(len(boxes)):
+                pred_list.append((scores[i], int(classes[i]), boxes[i], img_idx))
+            for cls_id, box in gts:
+                gt_list.append([cls_id, box, img_idx, False])  # False = not matched
+        
+        if len(gt_list) == 0:
+            return 0.0, 0.0, 0.0
+        
+        # 按置信度排序
+        pred_list.sort(key=lambda x: x[0], reverse=True)
+        
+        # 匹配
+        tp = np.zeros(len(pred_list))
+        fp = np.zeros(len(pred_list))
+        
+        for pred_idx, (score, pred_cls, pred_box, img_idx) in enumerate(pred_list):
+            best_iou = 0
+            best_gt_idx = -1
             
-        all_boxes = np.concatenate(all_boxes)
-        all_scores = np.concatenate(all_scores)
-        all_classes = np.concatenate(all_classes)
+            for gt_idx, (gt_cls, gt_box, gt_img_idx, matched) in enumerate(gt_list):
+                if gt_img_idx != img_idx or gt_cls != pred_cls or matched:
+                    continue
+                iou = compute_iou(pred_box, gt_box)
+                if iou > best_iou:
+                    best_iou = iou
+                    best_gt_idx = gt_idx
+            
+            if best_iou >= iou_thresh and best_gt_idx >= 0:
+                tp[pred_idx] = 1
+                gt_list[best_gt_idx][3] = True  # mark as matched
+            else:
+                fp[pred_idx] = 1
         
-        final_boxes, final_scores, final_classes = self._global_nms(
-            all_boxes, all_scores, all_classes
-        )
-
-        # 转换为 COCO 结果格式
-        coco_image_id = self.filename_to_id.get(f"{image_id}.jpg")
-        if coco_image_id is None:
-            return []
-
-        coco_results = []
-        for box, score, cls_id in zip(final_boxes, final_scores, final_classes):
-            x1, y1, x2, y2 = box
-            coco_results.append({
-                "image_id": coco_image_id,
-                "category_id": int(cls_id),
-                "bbox": [float(x1), float(y1), float(x2 - x1), float(y2 - y1)],  # xywh
-                "score": float(score),
-            })
+        # 计算累积 TP/FP
+        tp_cumsum = np.cumsum(tp)
+        fp_cumsum = np.cumsum(fp)
         
-        return coco_results
+        recalls = tp_cumsum / len(gt_list)
+        precisions = tp_cumsum / (tp_cumsum + fp_cumsum + 1e-16)
+        
+        # 计算 AP
+        ap = compute_ap(recalls, precisions)
+        
+        # 最终 precision/recall
+        final_precision = tp.sum() / (tp.sum() + fp.sum() + 1e-16)
+        final_recall = tp.sum() / len(gt_list)
+        
+        return final_precision, final_recall, ap
 
     def run(self) -> Dict[str, float]:
         """执行完整验证流程，返回 mAP 指标"""
-        # 获取所有 image_id
         index_files = list(self.index_dir.glob("*.json"))
         image_ids = [f.stem for f in index_files]
         
         print(f"Found {len(image_ids)} images to validate")
         
-        # 收集所有结果
-        all_results = []
+        all_preds = []
+        all_gts = []
+        
         for image_id in tqdm(image_ids, desc="Processing"):
-            results = self._process_single_image(image_id)
-            all_results.extend(results)
+            pred_boxes, pred_scores, pred_classes, gt_boxes = self._process_single_image(image_id)
+            all_preds.append((pred_boxes, pred_scores, pred_classes))
+            all_gts.append(gt_boxes)
         
-        print(f"Total detections: {len(all_results)}")
+        total_preds = sum(len(p[0]) for p in all_preds)
+        total_gts = sum(len(g) for g in all_gts)
+        print(f"Total predictions: {total_preds}, Total GT: {total_gts}")
         
-        if len(all_results) == 0:
-            print("No detections, cannot evaluate")
-            return {"mAP50": 0.0, "mAP50-95": 0.0}
+        if total_gts == 0:
+            print("No GT labels found")
+            return {"mAP50": 0.0, "mAP50-95": 0.0, "precision": 0.0, "recall": 0.0}
 
-        # COCO 评估
-        coco_dt = self.coco_gt.loadRes(all_results)
-        coco_eval = COCOeval(self.coco_gt, coco_dt, "bbox")
-        coco_eval.evaluate()
-        coco_eval.accumulate()
-        coco_eval.summarize()
+        # 计算 mAP50
+        p50, r50, ap50 = self._compute_metrics(all_preds, all_gts, iou_thresh=0.5)
+        
+        # 计算 mAP50-95 (平均 IoU 从 0.5 到 0.95，步长 0.05)
+        aps = []
+        for iou in np.arange(0.5, 1.0, 0.05):
+            # 重置 GT matched 状态
+            for gt in all_gts:
+                for item in gt:
+                    if len(item) > 3:
+                        item[3] = False
+            _, _, ap = self._compute_metrics(all_preds, all_gts, iou_thresh=iou)
+            aps.append(ap)
+        map50_95 = np.mean(aps)
+        
+        print(f"\nResults:")
+        print(f"  Precision@50: {p50:.4f}")
+        print(f"  Recall@50:    {r50:.4f}")
+        print(f"  AP@50:        {ap50:.4f}")
+        print(f"  mAP@50-95:    {map50_95:.4f}")
         
         return {
-            "mAP50-95": coco_eval.stats[0],
-            "mAP50": coco_eval.stats[1],
+            "mAP50": ap50,
+            "mAP50-95": map50_95,
+            "precision": p50,
+            "recall": r50,
         }
 
 
 if __name__ == "__main__":
     validator = FullImageValidator(
-        model_path="path/to/best.pt",
+        model="path/to/best.pt",
         index_dir="/Users/weixianfu/Documents/Datas/mtsd-resized/val/index",
         images_dir="/Users/weixianfu/Documents/Datas/mtsd-resized/val/images",
-        gt_path="path/to/val_annotations.json",
+        gt_labels_dir="/Users/weixianfu/Documents/Datas/mtsd/val/labels",  # YOLO 格式
     )
     metrics = validator.run()
     print(f"\nmAP50: {metrics['mAP50']:.4f}")
     print(f"mAP50-95: {metrics['mAP50-95']:.4f}")
-

@@ -4,6 +4,10 @@ __pycache__/
 *$py.class
 *.so
 .Python
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
 build/
 develop-eggs/
 dist/
@@ -24,7 +28,12 @@ wheels/
 venv/
 env/
 ENV/
-.venv
+.venv/
+
+# Environment variables
+.env
+.env.*
+!.env.example
 
 # IDE
 .vscode/
@@ -35,6 +44,8 @@ ENV/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+**/temp.ipynb
+**/tmp_*/
 
 # Images and media files
 *.png
