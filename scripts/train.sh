@@ -51,6 +51,11 @@ echo "Data config: $DATA_CONFIG" | tee -a "$LOG_FILE"
 echo "==========================================" | tee -a "$LOG_FILE"
 echo "" | tee -a "$LOG_FILE"
 
+# Server data paths
+# val_full 包含原始 val 数据的 GT labels
+SLICED_ROOT="/root/autodl-tmp/MTSD_download/mtsd-resized"
+GT_LABELS_DIR="$SLICED_ROOT/val_full/labels"
+
 # Run training with nohup (disconnect-safe)
 # -u: unbuffered Python output (real-time logging)
 # 2>&1: redirect stderr to stdout
@@ -59,6 +64,7 @@ echo "" | tee -a "$LOG_FILE"
 nohup python -u "$TRAIN_SCRIPT" \
     --config "$TRAIN_CONFIG" \
     --data "$DATA_CONFIG" \
+    --gt-labels-dir "$GT_LABELS_DIR" \
     --full-val-interval 10 \
     >> "$LOG_FILE" 2>&1 &
 

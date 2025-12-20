@@ -1,5 +1,14 @@
+# 原始数据路径（本地切片处理用）
+# MacBook: /Users/weixianfu/Documents/Datas/mtsd
+# Server:  不需要（服务器 val_full 已在 sliced 目录下）
 path: /Users/weixianfu/Documents/Datas/mtsd
-path_sliced_resized: /Users/weixianfu/Documents/Datas/mtsd-resized
+
+# 切片后的数据路径（训练用）
+# MacBook: /Users/weixianfu/Documents/Datas/mtsd-resized
+# Server:  /root/autodl-tmp/MTSD_download/mtsd-resized
+path_sliced_resized: /root/autodl-tmp/MTSD_download/mtsd-resized
+
+# 相对于 path_sliced_resized 的子目录
 train: train_full/images
 val: val/images
 nc: 401
