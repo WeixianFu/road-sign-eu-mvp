@@ -52,9 +52,9 @@ echo "==========================================" | tee -a "$LOG_FILE"
 echo "" | tee -a "$LOG_FILE"
 
 # Server data paths
-# val_full 包含原始 val 数据的 GT labels
+# valfull 包含原始 val 数据的 GT labels
 SLICED_ROOT="/root/autodl-tmp/MTSD_download/mtsd-resized"
-GT_LABELS_DIR="$SLICED_ROOT/val_full/labels"
+GT_LABELS_DIR="$SLICED_ROOT/valfull/labels"
 
 # Run training with nohup (disconnect-safe)
 # -u: unbuffered Python output (real-time logging)

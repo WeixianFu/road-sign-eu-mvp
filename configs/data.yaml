@@ -1,14 +1,12 @@
-# 原始数据路径（本地切片处理用）
-# MacBook: /Users/weixianfu/Documents/Datas/mtsd
-# Server:  不需要（服务器 val_full 已在 sliced 目录下）
-path: /Users/weixianfu/Documents/Datas/mtsd
+# YOLO 数据根目录（train/val 相对于此路径）
+# Server: /root/autodl-tmp/MTSD_download/mtsd-resized
+path: /root/autodl-tmp/MTSD_download/mtsd-resized
 
-# 切片后的数据路径（训练用）
-# MacBook: /Users/weixianfu/Documents/Datas/mtsd-resized
-# Server:  /root/autodl-tmp/MTSD_download/mtsd-resized
-path_sliced_resized: /root/autodl-tmp/MTSD_download/mtsd-resized
+# FullImageValidator 用的原图 GT labels 目录
+# Server: valfull/labels 在 path 同级
+path_valfull_labels: /root/autodl-tmp/MTSD_download/mtsd-resized/valfull/labels
 
-# 相对于 path_sliced_resized 的子目录
+# 相对于 path 的子目录
 train: train_full/images
 val: val/images
 nc: 401

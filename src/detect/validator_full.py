@@ -48,7 +48,7 @@ class FullImageValidator:
         index_dir: str,
         images_dir: str,
         gt_labels_dir: str,  # YOLO 格式 labels 目录
-        conf_thresh: float = 0.001,
+        conf_thresh: float = 0.25,  # 0.001太低导致计算极慢
         iou_thresh: float = 0.5,
         device: str = None,
     ):
@@ -217,43 +217,51 @@ class FullImageValidator:
         all_gts: List[List[Tuple[int, np.ndarray]]],
         iou_thresh: float
     ) -> Tuple[float, float, float]:
-        """计算 Precision, Recall, AP@iou_thresh"""
-        # 收集所有预测和 GT
+        """计算 Precision, Recall, AP@iou_thresh（按图像分组优化版）"""
+        # 按图像分组收集预测和 GT
         pred_list = []  # [(score, cls, box, img_idx), ...]
-        gt_list = []    # [(cls, box, img_idx, matched), ...]
+        gt_by_image = {}  # {img_idx: [(gt_idx, cls, box, matched), ...]}
+        total_gt = 0
+        gt_global_idx = 0
         
         for img_idx, (preds, gts) in enumerate(zip(all_preds, all_gts)):
             boxes, scores, classes = preds
             for i in range(len(boxes)):
                 pred_list.append((scores[i], int(classes[i]), boxes[i], img_idx))
+            
+            # 按图像分组 GT
+            gt_by_image[img_idx] = []
             for cls_id, box in gts:
-                gt_list.append([cls_id, box, img_idx, False])  # False = not matched
+                gt_by_image[img_idx].append([gt_global_idx, cls_id, box, False])
+                gt_global_idx += 1
+                total_gt += 1
         
-        if len(gt_list) == 0:
+        if total_gt == 0:
             return 0.0, 0.0, 0.0
         
         # 按置信度排序
         pred_list.sort(key=lambda x: x[0], reverse=True)
         
-        # 匹配
+        # 匹配（只在对应图像的 GT 中查找）
         tp = np.zeros(len(pred_list))
         fp = np.zeros(len(pred_list))
         
         for pred_idx, (score, pred_cls, pred_box, img_idx) in enumerate(pred_list):
             best_iou = 0
-            best_gt_idx = -1
+            best_gt_local_idx = -1
             
-            for gt_idx, (gt_cls, gt_box, gt_img_idx, matched) in enumerate(gt_list):
-                if gt_img_idx != img_idx or gt_cls != pred_cls or matched:
+            # 只遍历当前图像的 GT
+            for local_idx, (gt_global_idx, gt_cls, gt_box, matched) in enumerate(gt_by_image[img_idx]):
+                if gt_cls != pred_cls or matched:
                     continue
                 iou = compute_iou(pred_box, gt_box)
                 if iou > best_iou:
                     best_iou = iou
-                    best_gt_idx = gt_idx
+                    best_gt_local_idx = local_idx
             
-            if best_iou >= iou_thresh and best_gt_idx >= 0:
+            if best_iou >= iou_thresh and best_gt_local_idx >= 0:
                 tp[pred_idx] = 1
-                gt_list[best_gt_idx][3] = True  # mark as matched
+                gt_by_image[img_idx][best_gt_local_idx][3] = True  # mark as matched
             else:
                 fp[pred_idx] = 1
         
@@ -261,7 +269,7 @@ class FullImageValidator:
         tp_cumsum = np.cumsum(tp)
         fp_cumsum = np.cumsum(fp)
         
-        recalls = tp_cumsum / len(gt_list)
+        recalls = tp_cumsum / total_gt
         precisions = tp_cumsum / (tp_cumsum + fp_cumsum + 1e-16)
         
         # 计算 AP
@@ -269,7 +277,7 @@ class FullImageValidator:
         
         # 最终 precision/recall
         final_precision = tp.sum() / (tp.sum() + fp.sum() + 1e-16)
-        final_recall = tp.sum() / len(gt_list)
+        final_recall = tp.sum() / total_gt
         
         return final_precision, final_recall, ap
 
@@ -326,11 +334,12 @@ class FullImageValidator:
 
 
 if __name__ == "__main__":
+    # Server paths (update if running locally)
     validator = FullImageValidator(
-        model="path/to/best.pt",
-        index_dir="/Users/weixianfu/Documents/Datas/mtsd-resized/val/index",
-        images_dir="/Users/weixianfu/Documents/Datas/mtsd-resized/val/images",
-        gt_labels_dir="/Users/weixianfu/Documents/Datas/mtsd/val/labels",  # YOLO 格式
+        model="runs/mtsd/yolov8m_production/weights/best.pt",
+        index_dir="/root/autodl-tmp/MTSD_download/mtsd-resized/val/index",
+        images_dir="/root/autodl-tmp/MTSD_download/mtsd-resized/val/images",
+        gt_labels_dir="/root/autodl-tmp/MTSD_download/mtsd-resized/valfull/labels",
     )
     metrics = validator.run()
     print(f"\nmAP50: {metrics['mAP50']:.4f}")

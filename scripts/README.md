@@ -2,6 +2,24 @@
 
 用于在 Linux 服务器上运行正式训练的脚本。
 
+## 🚀 快速参考
+
+```bash
+# 启动训练（后台运行，可关闭窗口）
+cd /root/road-sign-eu-mvp && ./scripts/train.sh
+
+# 实时查看日志（任意目录可用）
+tail -f /root/road-sign-eu-mvp/scripts/train.log
+
+# 检查训练状态
+source /root/road-sign-eu-mvp/scripts/train_utils.sh && train_status
+
+# 停止训练
+source /root/road-sign-eu-mvp/scripts/train_utils.sh && train_stop
+```
+
+---
+
 ## 文件说明
 
 - `train.sh`: 主训练脚本，启动后台训练

@@ -143,17 +143,17 @@ def main():
         data_cfg = yaml.safe_load(f)
     
     # Use provided paths or defaults from data config
-    original_root = data_cfg.get("path", "")
-    sliced_root = data_cfg.get("path_sliced_resized", "")
+    data_root = data_cfg.get("path", "")
+    valfull_labels = data_cfg.get("path_valfull_labels", "")
     
-    index_dir = args.index_dir or f"{sliced_root}/val/index"
-    images_dir = args.images_dir or f"{sliced_root}/val/images"
+    index_dir = args.index_dir or f"{data_root}/val/index"
+    images_dir = args.images_dir or f"{data_root}/val/images"
     
-    # 默认使用原始 val labels 目录，除非 --no-full-val
+    # 使用 valfull labels 目录，除非 --no-full-val
     if args.no_full_val:
         gt_labels_dir = None
     else:
-        gt_labels_dir = args.gt_labels_dir or f"{original_root}/val/labels"
+        gt_labels_dir = args.gt_labels_dir or valfull_labels
     
     trainer = TrainerWithFullVal(
         config_path=args.config,

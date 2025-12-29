@@ -12,11 +12,12 @@ imgsz: 1280  # MUST match tile size, do not change
 # Training Control
 # =============================================================================
 epochs: 150
-batch: 16        # Adjust per GPU VRAM (24GB -> 16, 48GB -> 32)
+batch: 48        # RTX 6000 Pro 96GB (27.7G@16 -> ~80G@48)
 device: 0        # Single GPU, or [0,1,2,3] for multi-GPU
-workers: 8
+workers: 10
 patience: 50     # Early stopping patience
-cache: True      # RAM cache for faster training
+save_period: 5   # 每5个epoch保存一次checkpoint
+cache: False     # 不缓存 (RAM需104GB, disk需2.5TB，都不够)
 
 # =============================================================================
 # Optimizer
