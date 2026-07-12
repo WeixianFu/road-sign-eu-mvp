@@ -17,9 +17,9 @@ cd "$PROJECT_ROOT"
 # Log file path (in scripts/ directory, same as script)
 LOG_FILE="$SCRIPT_DIR/train.log"
 
-# Configuration files
-TRAIN_CONFIG="$PROJECT_ROOT/configs/train.yaml"
-DATA_CONFIG="$PROJECT_ROOT/configs/data.yaml"
+# Configuration files (override: ./scripts/train.sh [train_cfg] [data_cfg])
+TRAIN_CONFIG="${1:-$PROJECT_ROOT/configs/train_core146.yaml}"
+DATA_CONFIG="${2:-$PROJECT_ROOT/configs/data_core146.yaml}"
 
 # Python script
 TRAIN_SCRIPT="$PROJECT_ROOT/src/detect/train.py"
@@ -51,11 +51,9 @@ echo "Data config: $DATA_CONFIG" | tee -a "$LOG_FILE"
 echo "==========================================" | tee -a "$LOG_FILE"
 echo "" | tee -a "$LOG_FILE"
 
-# Server data paths
-# valfull 包含原始 val 数据的 GT labels
-SLICED_ROOT="/root/autodl-tmp/MTSD_download/mtsd-resized"
-GT_LABELS_DIR="$SLICED_ROOT/valfull/labels"
-
+# Full-image validation disabled for mtsd_core146:
+# 数据集里没有 val/index 和 valfull GT labels，且旧 valfull GT 是 401 类 id，
+# 与 146 类模型不匹配。恢复 full-val 需先用 401→146 映射重新生成 valfull labels。
 # Run training with nohup (disconnect-safe)
 # -u: unbuffered Python output (real-time logging)
 # 2>&1: redirect stderr to stdout
@@ -64,8 +62,7 @@ GT_LABELS_DIR="$SLICED_ROOT/valfull/labels"
 nohup python -u "$TRAIN_SCRIPT" \
     --config "$TRAIN_CONFIG" \
     --data "$DATA_CONFIG" \
-    --gt-labels-dir "$GT_LABELS_DIR" \
-    --full-val-interval 10 \
+    --no-full-val \
     >> "$LOG_FILE" 2>&1 &
 
 # Get process ID
