@@ -10,7 +10,7 @@
 | 模型 | yolov8m, imgsz 1280 |
 | 硬件 | 2× 魔改 RTX 4090 48GB，DDP，总 batch 48（每卡 24，约 40G/卡） |
 | 配置 | `configs/train_core146.yaml` + `configs/data_core146.yaml`（改参数只改这两个文件） |
-| 输出 | `runs/mtsd_core146/yolov8m_core146/`（权重在其 `weights/` 下） |
+| 输出 | `runs/detect/runs/mtsd_core146/yolov8m_core146/`（权重在其 `weights/` 下） |
 | 验证 | YOLO 切片级 val 每 epoch 跑；全图 full-val 已禁用（见文末"已知限制"） |
 
 ## 1. 租机（AutoDL 控制台）
@@ -119,6 +119,9 @@ cd /root/road-sign-eu-mvp
 - nohup 后台运行，**关掉 SSH / 断网训练不中断**。
 - 全部输出写入 `scripts/train.log`，进程号存 `scripts/train.pid`。
 - 启动后先 `tail -f scripts/train.log` 盯 2 分钟：确认 DDP 起来（日志出现 `DDP: debug command ... --device 0,1`）、数据集扫描通过、第一个 epoch 开始出进度条，再放心断开。
+- **实际输出目录以日志里 `Logging results to` 那一行为准**。DDP 子进程重建参数时会把相对的
+  `project` 拼到默认目录下，实测为 `runs/detect/runs/mtsd_core146/yolov8m_core146/`（比配置里多一层
+  `runs/detect/`），本手册后文路径均按此实测值。
 
 （可选）挂一个"训练完自动关机"的看门狗，防止跑完空烧钱：
 
@@ -142,13 +145,13 @@ train_status        # 或 train_stop
 watch -n 2 nvidia-smi
 
 # 每个 epoch 的指标表（mAP50 / mAP50-95 / loss）
-column -s, -t /root/road-sign-eu-mvp/runs/mtsd_core146/yolov8m_core146/results.csv | less -S
+column -s, -t /root/road-sign-eu-mvp/runs/detect/runs/mtsd_core146/yolov8m_core146/results.csv | less -S
 ```
 
 **网页可视化（不用 SSH）**：AutoDL 控制台的 TensorBoard 面板读 `/root/tf-logs`，启动训练后做一次软链即可：
 
 ```bash
-rm -rf /root/tf-logs && ln -s /root/road-sign-eu-mvp/runs/mtsd_core146 /root/tf-logs
+rm -rf /root/tf-logs && ln -s /root/road-sign-eu-mvp/runs/detect/runs/mtsd_core146 /root/tf-logs
 ```
 
 之后在 AutoDL 实例页面点「TensorBoard」就能在浏览器看损失曲线和 mAP。
@@ -159,7 +162,7 @@ checkpoint 每 5 个 epoch 存一次（`save_period: 5`），且 `last.pt` 每�
 
 ```bash
 cd /root/road-sign-eu-mvp
-nohup yolo train resume model=runs/mtsd_core146/yolov8m_core146/weights/last.pt \
+nohup yolo train resume model=runs/detect/runs/mtsd_core146/yolov8m_core146/weights/last.pt \
     >> scripts/train.log 2>&1 &
 echo $! > scripts/train.pid
 ```
@@ -172,9 +175,9 @@ ultralytics 会从 `last.pt` 连同优化器状态、epoch 数、DDP 配置一�
 2. 下载权重到本地（在**本地 Mac** 执行，端口/地址按 AutoDL 实例 SSH 信息替换）：
 
    ```bash
-   scp -P <端口> root@<地址>:/root/road-sign-eu-mvp/runs/mtsd_core146/yolov8m_core146/weights/best.pt ~/Downloads/
+   scp -P <端口> root@<地址>:/root/road-sign-eu-mvp/runs/detect/runs/mtsd_core146/yolov8m_core146/weights/best.pt ~/Downloads/
    # 想要完整训练产物（曲线图、csv、args）：
-   ssh -p <端口> root@<地址> "cd /root/road-sign-eu-mvp/runs/mtsd_core146 && tar czf /root/autodl-tmp/yolov8m_core146_run.tar.gz yolov8m_core146 --exclude='*.pt' "
+   ssh -p <端口> root@<地址> "cd /root/road-sign-eu-mvp/runs/detect/runs/mtsd_core146 && tar czf /root/autodl-tmp/yolov8m_core146_run.tar.gz yolov8m_core146 --exclude='*.pt' "
    scp -P <端口> root@<地址>:/root/autodl-tmp/yolov8m_core146_run.tar.gz ~/Downloads/
    ```
 
