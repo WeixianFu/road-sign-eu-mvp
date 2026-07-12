@@ -89,11 +89,12 @@ ls /root/autodl-tmp/mtsd_core146/val/images | wc -l          # 应为 54518
 ## 3. 首次部署（开机后跑一次）
 
 ```bash
-source /etc/network_turbo                                        # AutoDL 学术加速
-git clone -b re-phase git@github.com:WeixianFu/road-sign-eu-mvp.git /root/road-sign-eu-mvp
-# （没配 SSH key 就用 https://github.com/WeixianFu/road-sign-eu-mvp.git）
+source /etc/network_turbo                                        # AutoDL 学术加速（加速 GitHub）
+git clone -b re-phase https://github.com/WeixianFu/road-sign-eu-mvp.git /root/road-sign-eu-mvp
+# 注意用 HTTPS：服务器上没有你的 SSH key，git@github.com: 会报 Permission denied (publickey)
 cd /root/road-sign-eu-mvp
 bash scripts/setup_server.sh                                     # 装依赖 + 查 GPU + 验数据 + 下载预训练权重
+# 脚本内部自己管理代理开关：pip 走国内源（不代理），权重下载走 GitHub（开代理）
 ```
 
 脚本任何一步报错都会停下并说明原因（最常见：数据没解压完整）。
