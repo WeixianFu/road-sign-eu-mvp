@@ -59,9 +59,13 @@ cat /root/autodl-tmp/mtsd_core146.tar* | md5sum
 
 ```bash
 cd /root/autodl-tmp
-cat mtsd_core146.tar* | tar -xf -      # 退出码非 0 = 数据流损坏
+cat mtsd_core146.tar* | tar -xf - --warning=no-unknown-keyword   # 退出码非 0 = 数据流损坏
 rm mtsd_core146.tar*                   # 2.3 校验通过后再删，省 60GB
 ```
+
+会刷屏大量 `Ignoring unknown extended header keyword 'LIBARCHIVE.xattr.com.apple.provenance'`
+属**正常现象**：包是 macOS 打的，Linux tar 不认识苹果的文件元数据字段，忽略的只是元数据，
+文件内容完整解出。加上面的 `--warning=no-unknown-keyword` 可静音；忘加也无需重解压。
 
 ### 2.3 数据完整性校验（解压后）
 
