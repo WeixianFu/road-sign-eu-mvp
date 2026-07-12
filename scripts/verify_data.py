@@ -94,8 +94,19 @@ def check_split(root, split, nc, sample, errors):
             fail(f"目录缺失: {d}", errors)
             return
 
-    images = sorted(img_dir.glob("*.jpg"))
-    labels = sorted(lbl_dir.glob("*.txt"))
+    # macOS AppleDouble 垃圾文件 (._xxx / .DS_Store): Mac tar 打包携带, 必须删除,
+    # 否则 YOLO 扫数据集时会把它们当图片/标签读
+    junk = [p for d in (img_dir, lbl_dir) for p in d.iterdir()
+            if p.name.startswith("._") or p.name == ".DS_Store"]
+    if junk:
+        fail(
+            f"{split} 存在 {len(junk)} 个 macOS 元数据垃圾文件 (._* / .DS_Store)。"
+            f"修复: find {root} \\( -name '._*' -o -name '.DS_Store' \\) -delete",
+            errors,
+        )
+
+    images = sorted(p for p in img_dir.glob("*.jpg") if not p.name.startswith("._"))
+    labels = sorted(p for p in lbl_dir.glob("*.txt") if not p.name.startswith("._"))
     expected = EXPECTED_COUNTS[split]
     print(f"  images: {len(images)} (预期 {expected}) | labels: {len(labels)}")
     if len(images) != expected:

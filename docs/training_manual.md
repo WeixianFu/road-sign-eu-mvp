@@ -67,6 +67,16 @@ rm mtsd_core146.tar*                   # 2.3 校验通过后再删，省 60GB
 属**正常现象**：包是 macOS 打的，Linux tar 不认识苹果的文件元数据字段，忽略的只是元数据，
 文件内容完整解出。加上面的 `--warning=no-unknown-keyword` 可静音；忘加也无需重解压。
 
+**解压后必须清理 macOS 垃圾文件**——Mac 打包会给每个文件塞一个 `._` 开头的 AppleDouble
+元数据孪生文件（所以解压后文件数正好翻倍），不删的话 YOLO 会把它们当图片/标签读：
+
+```bash
+find /root/autodl-tmp/mtsd_core146 \( -name '._*' -o -name '.DS_Store' \) -delete
+```
+
+（`verify_data.py` 会检测到这些文件并报错提醒。根治办法：以后在 Mac 上打包时加环境变量
+`COPYFILE_DISABLE=1 tar -cf - mtsd_core146 | split -b 10g -d - mtsd_core146.tar`，就不会产生 `._` 文件。）
+
 ### 2.3 数据完整性校验（解压后）
 
 完整校验由 `scripts/verify_data.py` 完成（在第 3 步 clone 代码后运行，`setup_server.sh` 会自动调用）。它检查：
