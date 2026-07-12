@@ -28,20 +28,9 @@ for i in range(n):
 assert n >= 1, "未检测到 CUDA GPU"
 EOF
 
-echo "== [4/5] 数据检查: $DATA_ROOT =="
-for d in train_full/images train_full/labels val/images val/labels; do
-    if [ ! -d "$DATA_ROOT/$d" ]; then
-        echo "  ERROR: 缺少目录 $DATA_ROOT/$d（数据未解压或路径不对）" >&2
-        exit 1
-    fi
-done
-n_train=$(ls "$DATA_ROOT/train_full/images" | wc -l)
-n_val=$(ls "$DATA_ROOT/val/images" | wc -l)
-echo "  train images: $n_train (应为 131429)"
-echo "  val   images: $n_val (应为 54518)"
-if [ "$n_train" -ne 131429 ] || [ "$n_val" -ne 54518 ]; then
-    echo "  WARNING: 图片数量与预期不符，请检查解压是否完整！" >&2
-fi
+echo "== [4/5] 数据完整性校验: $DATA_ROOT（全量标签扫描+抽样解码，约2-3分钟）=="
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+python "$SCRIPT_DIR/verify_data.py" --root "$DATA_ROOT"
 
 echo "== [5/5] 预下载模型权重 yolov8m.pt =="
 python -c "from ultralytics import YOLO; YOLO('yolov8m.pt')"

@@ -5,7 +5,7 @@
 ## 0. 本次训练概览
 
 | 项 | 值 |
-|---|---|
+| --- | --- |
 | 数据 | `/root/autodl-tmp/mtsd_core146`（146 类，train 131,429 / val 54,518 张 1280 切片，59GB） |
 | 模型 | yolov8m, imgsz 1280 |
 | 硬件 | 2× 魔改 RTX 4090 48GB，DDP，总 batch 48（每卡 24，约 40G/卡） |
@@ -24,18 +24,62 @@
 
 数据最终必须长这样（`setup_server.sh` 会自动校验数量）：
 
-```
+```text
 /root/autodl-tmp/mtsd_core146/
 ├── train_full/{images,labels}   # 131,429 张
 └── val/{images,labels}          #  54,518 张
 ```
 
-如果上传的是 tar 分卷（`mtsd_core146.tar00` ~ `tar05`，注意卷名无点号）：
+### 2.1 校验 tar 分卷（解压前）
+
+传输 60GB 最容易出的问题是分卷缺失或字节不全。解压前先对一下**每卷的字节数**（免费、秒出）：
+
+```bash
+ls -l /root/autodl-tmp/mtsd_core146.tar*
+```
+
+| 卷 | 字节数 |
+| --- | --- |
+| tar00 ~ tar04 | 每卷 `10737418240` |
+| tar05 | `9867438080` |
+
+任何一卷对不上 = 传输不完整，重传该卷。如需更强校验（可选，两端各读一遍 60GB，约几分钟）：
+
+```bash
+# 本地 Mac:
+cat /Users/weixianfu/Documents/Datas/mtsd_core146.tar* | md5
+# 服务器:
+cat /root/autodl-tmp/mtsd_core146.tar* | md5sum
+# 两个值一致即完好
+```
+
+### 2.2 解压
+
+分卷名是 `mtsd_core146.tar00` ~ `tar05`（无点号）：
 
 ```bash
 cd /root/autodl-tmp
-cat mtsd_core146.tar* | tar -xf -
-rm mtsd_core146.tar*          # 解压确认无误后删掉，省 60GB
+cat mtsd_core146.tar* | tar -xf -      # 退出码非 0 = 数据流损坏
+rm mtsd_core146.tar*                   # 2.3 校验通过后再删，省 60GB
+```
+
+### 2.3 数据完整性校验（解压后）
+
+完整校验由 `scripts/verify_data.py` 完成（在第 3 步 clone 代码后运行，`setup_server.sh` 会自动调用）。它检查：
+
+- 目录结构、图片数量与预期**完全一致**（train 131,429 / val 54,518）
+- 图片↔标签一一配对（孤儿标签报错；无标签图片计为背景负样本）
+- **全量**标签内容合法性（5 列、类别 id ∈ [0,146)、坐标 ∈ [0,1]）
+- 146 个类别在 train 中全部出现
+- 均匀抽样 2000 张图片解码，检测截断/损坏的 JPEG
+
+本地数据的基准值（服务器上应完全一致）：train 背景空标签 47,174，val 背景空标签 42,298，train 类别 146/146，val 类别 145/146。
+
+等不及 clone 代码想先快速看一眼，可以手动数一下：
+
+```bash
+ls /root/autodl-tmp/mtsd_core146/train_full/images | wc -l   # 应为 131429
+ls /root/autodl-tmp/mtsd_core146/val/images | wc -l          # 应为 54518
 ```
 
 ## 3. 首次部署（开机后跑一次）
@@ -112,12 +156,12 @@ ultralytics 会从 `last.pt` 连同优化器状态、epoch 数、DDP 配置一�
 1. 看最终指标：`tail -n 50 scripts/train.log`，以及 `runs/.../results.png`、`confusion_matrix.png`。
 2. 下载权重到本地（在**本地 Mac** 执行，端口/地址按 AutoDL 实例 SSH 信息替换）：
 
-```bash
-scp -P <端口> root@<地址>:/root/road-sign-eu-mvp/runs/mtsd_core146/yolov8m_core146/weights/best.pt ~/Downloads/
-# 想要完整训练产物（曲线图、csv、args）：
-ssh -p <端口> root@<地址> "cd /root/road-sign-eu-mvp/runs/mtsd_core146 && tar czf /root/autodl-tmp/yolov8m_core146_run.tar.gz yolov8m_core146 --exclude='*.pt' "
-scp -P <端口> root@<地址>:/root/autodl-tmp/yolov8m_core146_run.tar.gz ~/Downloads/
-```
+   ```bash
+   scp -P <端口> root@<地址>:/root/road-sign-eu-mvp/runs/mtsd_core146/yolov8m_core146/weights/best.pt ~/Downloads/
+   # 想要完整训练产物（曲线图、csv、args）：
+   ssh -p <端口> root@<地址> "cd /root/road-sign-eu-mvp/runs/mtsd_core146 && tar czf /root/autodl-tmp/yolov8m_core146_run.tar.gz yolov8m_core146 --exclude='*.pt' "
+   scp -P <端口> root@<地址>:/root/autodl-tmp/yolov8m_core146_run.tar.gz ~/Downloads/
+   ```
 
 3. **确认文件都拿到后再关机/释放实例**（数据盘内容在"关机"状态保留，"释放"则全部清空）。
 
@@ -130,7 +174,7 @@ scp -P <端口> root@<地址>:/root/autodl-tmp/yolov8m_core146_run.tar.gz ~/Down
 ## 9. 故障排查
 
 | 症状 | 处理 |
-|---|---|
+| --- | --- |
 | CUDA out of memory | `train_core146.yaml` 里 `batch` 降到 40 → 32 试；魔改卡偶发驱动怪异，也可换实例 |
 | CPU 打满 / dataloader 卡慢 | `workers` 从 10 降到 6–8 |
 | 启动即退，日志报数据路径 | 确认 `configs/data_core146.yaml` 的 `path` 与实际解压位置一致 |
