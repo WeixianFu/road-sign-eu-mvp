@@ -1,0 +1,32 @@
+{
+  "commit": "ac1444e04fcb5fd1ed4c70f632c5f62bfcd46aa7",
+  "url": "https://github.com/WeixianFu/road-sign-eu-mvp/actions/runs/33982692070",
+  "jobs": [
+    {
+      "id": 101350631584,
+      "name": "lightweight (3.12)",
+      "conclusion": "success",
+      "test_output": [
+        "2026-09-05T18:00:37.1499897Z All checks passed!",
+        "2026-09-05T18:00:40.8284687Z 27 passed, 1 skipped in 3.12s"
+      ]
+    },
+    {
+      "id": 101350631624,
+      "name": "lightweight (3.9)",
+      "conclusion": "success",
+      "test_output": [
+        "2026-09-05T18:00:44.3566516Z All checks passed!",
+        "2026-09-05T18:00:47.8505906Z 27 passed, 1 skipped in 3.17s"
+      ]
+    },
+    {
+      "id": 101350631439,
+      "name": "ultralytics-adapter",
+      "conclusion": "success",
+      "test_output": [
+        "2026-09-05T18:01:20.3586450Z 3 passed, 27 deselected in 3.07s"
+      ]
+    }
+  ]
+}

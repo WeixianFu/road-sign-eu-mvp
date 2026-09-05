@@ -9,3 +9,7 @@
 - 保留最初代码风格检查失败和后来通过的完整输出，未覆盖失败记录。见 [操作日志](operations.jsonl)。
 
 GPU 的实际训练、显存、吞吐、断点训练状态、DDP，以及真实 MTSD 类别数量分布和精度，仍需目标机器验证。Ultralytics 测试只验证数据与接口；训练入口、恢复目录和参数传递用模型替身检查。非有限 loss 的证据文件由模拟批次检查。
+
+## GitHub Ubuntu 检查
+
+代码提交 `ac1444e` 的 [三项 CI 检查](https://github.com/WeixianFu/road-sign-eu-mvp/actions/runs/33982692070) 全部通过：Python 3.9 和 3.12 各 27 项通过、跳过未安装的训练适配器模块；Python 3.12 训练库适配器 3 项通过。CI 也仅使用合成数据，不执行模型训练。结果摘要见 [github-ci.json](checks/github-ci.json)。随后交付记录提交只修改文档，使用已验证的同一代码内容。
