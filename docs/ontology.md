@@ -1,50 +1,50 @@
-# Class Ontology Documentation
+# 类别本体
 
-## Overview
+唯一有效映射是 `configs/ontology.csv`，每个原始 0–400 ID 恰好一行。字段为原始 ID、原名、动作、目标语义、原因。当前为 **276 个原始类 → 153 个目标类**，另有 **5 个待复核类**和 **120 个本轮排除类**。
 
-This document describes the class mapping and ontology for the MTSD road sign detection system.
+目标 ID 按目标名称排序，随本体版本一起使用。153 类与旧 core146 的数字 ID 不兼容，必须从原始 401 类标签重新构建；不能把旧模型当作新 153 类模型直接恢复训练。
 
-## Class Categories
+## 合并判断
 
-MTSD road signs are organized into several categories:
+合并的目的是减少相同语义的视觉变体，不是强行维持 146 这个数量。
 
-### 1. Regulatory Signs
-Signs that impose legal requirements or restrictions.
-- Examples: `regulatory--stop--g1`, `regulatory--no-entry--g1`, `regulatory--maximum-speed-limit-45--g3`
+| 项目 | 新规则 | 原始 ID 示例 |
+|---|---|---|
+| 同语义 `gN` 版式 | 合并，仍保留原名作来源 | 左转 19/100/101 |
+| LED 限速 | 数值相同可合并 | 60：133/270 |
+| 限速数值 | 每个数值独立 | 30、40、50 等 |
+| 前方转弯／当前位置转弯 | 拆开，保留适用位置语义 | 44 对 100；28/137 对 146 |
+| 铁路道口 | 普通、有栏杆、无栏杆独立 | 9、96、333 |
+| 自行车／自行车和轻便摩托车 | 独立 | 191 对 296 |
+| 共用与分隔通道 | 共用一种；两种分隔排列分别保留 | 106/395；317；341 |
+| 道路封闭／禁止车辆 | 不在缺少视觉证据时认定等价 | 159/356 对 230/316 |
+| 警告与指示／附加牌 | 保持独立 | 92 对 25；58 对 63 |
+| 左右方向 | 保持独立 | 左转／右转、靠左／靠右 |
 
-### 2. Warning Signs
-Signs that warn of potential hazards or conditions.
-- Examples: `warning--pedestrians-crossing--g10`, `warning--railroad-crossing--g1`
+与旧映射相比有 **21 个原始 ID 的处理发生变化**，完整前后对照在 `docs/refactor/ontology-changes.json`。
 
-### 3. Information Signs
-Signs that provide information about facilities, services, or locations.
-- Examples: `information--end-of-built-up-area--g1`, `information--tram-bus-stop--g2`
+## 待复核项
 
-### 4. Complementary Signs
-Signs that modify or supplement other signs.
-- Examples: `complementary--maximum-speed-limit-15--g1`
+| 原始 ID | 问题 | 当前处理 |
+|---|---|---|
+| 304 | 原始名字为 no-stopping，但旧本地笔记明确要求放入 no-parking | 保留冲突证据，等图片复核 |
+| 80 | 原始名字含 chevron-right-unsure | 不把未确认的方向当作确定右向 |
+| 150/260/271 | 原始标签本身为 no-parking-or-no-stopping | 缺图片无法可靠拆分 |
 
-## Class Naming Convention
+包含这些标签的原图会记为 `review`，暂不进入训练和验证子集。因此评价报告指的是**本次选定原图子集**，不声称覆盖全部 MTSD val。待拿到数据后，用 `rs-preview --ontology configs/ontology.csv` 复查原图，修改对应 CSV 行，再生成新数据版本。
 
-MTSD uses a hierarchical naming convention:
+120 个排除类保留旧项目的检测范围选择，原因明确标为 `legacy scope`，不声称它们都不是欧洲标志。不再添加“小于 70 就自动删掉”之类规则；拆分后样本少的类别会在分析报告中显示。扩大覆盖范围应依据图片和训练实例数逐项进行。
+
+## 地域和数值含义
+
+用户确认范围包含瑞士和英国。没有地域白名单时，记录 `geography=unverified`；这不妨碍语义训练，但不能用于声称“纯欧洲训练集”。可在 `data.yaml` 指定 CSV 白名单：
+
+```csv
+source_id,country
+真实原图ID,GB
+另一个真实原图ID,CH
 ```
-{category}--{description}--{variant}
-```
 
-Example: `regulatory--maximum-speed-limit-45--g3`
-- Category: `regulatory`
-- Description: `maximum-speed-limit-45`
-- Variant: `g3` (group 3)
+白名单由使用者核实；本程序不根据 `g1/g2`、文件名或某个标志的样式自动推断国家。白名单填写国家不等于经过程序验证的地理证据。
 
-## Class Mapping
-
-The full class list is stored in:
-- `/Users/weixianfu/Documents/Datas/mtsd/classes.json`
-- Used by `configs/data.yaml` for training
-
-## Future Considerations
-
-- Mapping to canonical EU road sign categories
-- Cross-dataset compatibility (e.g., GTSDB)
-- Multi-language support for class names
-
+限速类别中的 30、50 等是牌面数值。英国场景可能使用 mph，其他场景可能使用 km/h；本阶段不生成推测单位，也不把牌面数字转换成统一速度。高度／重量限制的具体数值、附牌条件等留待后续文字识别与上下文解释。

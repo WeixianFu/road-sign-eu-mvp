@@ -1,0 +1,181 @@
+{
+  "classes": 153,
+  "source_train": 276,
+  "review": [
+    80,
+    150,
+    260,
+    271,
+    304
+  ],
+  "changes": [
+    {
+      "source_id": 28,
+      "source_name": "regulatory--turn-right-ahead--g1",
+      "old_target": "regulatory--turn-right",
+      "new_target": "regulatory--turn-right-ahead",
+      "action": "train",
+      "reason": "Merge only equivalent source meanings and visual variants."
+    },
+    {
+      "source_id": 44,
+      "source_name": "regulatory--turn-left-ahead--g1",
+      "old_target": "regulatory--turn-left",
+      "new_target": "regulatory--turn-left-ahead",
+      "action": "train",
+      "reason": "Merge only equivalent source meanings and visual variants."
+    },
+    {
+      "source_id": 64,
+      "source_name": "warning--railroad-crossing-without-barriers--g4",
+      "old_target": "warning--railroad-crossing",
+      "new_target": "warning--railroad-crossing-without-barriers",
+      "action": "train",
+      "reason": "Merge only equivalent source meanings and visual variants."
+    },
+    {
+      "source_id": 80,
+      "source_name": "complementary--chevron-right-unsure--g6",
+      "old_target": "complementary--chevron-right",
+      "new_target": null,
+      "action": "review",
+      "reason": "Source chevron-right-unsure is not a confirmed directional label."
+    },
+    {
+      "source_id": 96,
+      "source_name": "warning--railroad-crossing-with-barriers--g1",
+      "old_target": "warning--railroad-crossing",
+      "new_target": "warning--railroad-crossing-with-barriers",
+      "action": "train",
+      "reason": "Merge only equivalent source meanings and visual variants."
+    },
+    {
+      "source_id": 106,
+      "source_name": "regulatory--shared-path-pedestrians-and-bicycles--g1",
+      "old_target": "regulatory--bicycles-and-pedestrians-path",
+      "new_target": "regulatory--shared-path-pedestrians-and-bicycles",
+      "action": "train",
+      "reason": "Merge only equivalent source meanings and visual variants."
+    },
+    {
+      "source_id": 137,
+      "source_name": "regulatory--turn-right-ahead--g2",
+      "old_target": "regulatory--turn-right",
+      "new_target": "regulatory--turn-right-ahead",
+      "action": "train",
+      "reason": "Merge only equivalent source meanings and visual variants."
+    },
+    {
+      "source_id": 150,
+      "source_name": "regulatory--no-parking-or-no-stopping--g2",
+      "old_target": "regulatory--no-parking-or-no-stopping",
+      "new_target": null,
+      "action": "review",
+      "reason": "Source combines no-parking and no-stopping; image review required."
+    },
+    {
+      "source_id": 159,
+      "source_name": "regulatory--road-closed--g2",
+      "old_target": "regulatory--road-closed-to-vehicles",
+      "new_target": "regulatory--road-closed",
+      "action": "train",
+      "reason": "Merge only equivalent source meanings and visual variants."
+    },
+    {
+      "source_id": 223,
+      "source_name": "warning--railroad-crossing-without-barriers--g3",
+      "old_target": "warning--railroad-crossing",
+      "new_target": "warning--railroad-crossing-without-barriers",
+      "action": "train",
+      "reason": "Merge only equivalent source meanings and visual variants."
+    },
+    {
+      "source_id": 260,
+      "source_name": "regulatory--no-parking-or-no-stopping--g1",
+      "old_target": "regulatory--no-parking-or-no-stopping",
+      "new_target": null,
+      "action": "review",
+      "reason": "Source combines no-parking and no-stopping; image review required."
+    },
+    {
+      "source_id": 271,
+      "source_name": "regulatory--no-parking-or-no-stopping--g3",
+      "old_target": "regulatory--no-parking-or-no-stopping",
+      "new_target": null,
+      "action": "review",
+      "reason": "Source combines no-parking and no-stopping; image review required."
+    },
+    {
+      "source_id": 284,
+      "source_name": "warning--railroad-crossing-with-barriers--g2",
+      "old_target": "warning--railroad-crossing",
+      "new_target": "warning--railroad-crossing-with-barriers",
+      "action": "train",
+      "reason": "Merge only equivalent source meanings and visual variants."
+    },
+    {
+      "source_id": 296,
+      "source_name": "regulatory--mopeds-and-bicycles-only--g1",
+      "old_target": "regulatory--bicycles-only",
+      "new_target": "regulatory--mopeds-and-bicycles-only",
+      "action": "train",
+      "reason": "Merge only equivalent source meanings and visual variants."
+    },
+    {
+      "source_id": 304,
+      "source_name": "regulatory--no-stopping--g4",
+      "old_target": "regulatory--no-parking",
+      "new_target": null,
+      "action": "review",
+      "reason": "Legacy manual no-parking override conflicts with source no-stopping name; inspect images."
+    },
+    {
+      "source_id": 317,
+      "source_name": "regulatory--dual-path-bicycles-and-pedestrians--g1",
+      "old_target": "regulatory--bicycles-and-pedestrians-path",
+      "new_target": "regulatory--dual-path-bicycles-and-pedestrians",
+      "action": "train",
+      "reason": "Merge only equivalent source meanings and visual variants."
+    },
+    {
+      "source_id": 333,
+      "source_name": "warning--railroad-crossing-without-barriers--g1",
+      "old_target": "warning--railroad-crossing",
+      "new_target": "warning--railroad-crossing-without-barriers",
+      "action": "train",
+      "reason": "Merge only equivalent source meanings and visual variants."
+    },
+    {
+      "source_id": 341,
+      "source_name": "regulatory--dual-path-pedestrians-and-bicycles--g1",
+      "old_target": "regulatory--bicycles-and-pedestrians-path",
+      "new_target": "regulatory--dual-path-pedestrians-and-bicycles",
+      "action": "train",
+      "reason": "Merge only equivalent source meanings and visual variants."
+    },
+    {
+      "source_id": 356,
+      "source_name": "regulatory--road-closed--g1",
+      "old_target": "regulatory--road-closed-to-vehicles",
+      "new_target": "regulatory--road-closed",
+      "action": "train",
+      "reason": "Merge only equivalent source meanings and visual variants."
+    },
+    {
+      "source_id": 387,
+      "source_name": "warning--railroad-crossing-with-barriers--g4",
+      "old_target": "warning--railroad-crossing",
+      "new_target": "warning--railroad-crossing-with-barriers",
+      "action": "train",
+      "reason": "Merge only equivalent source meanings and visual variants."
+    },
+    {
+      "source_id": 395,
+      "source_name": "regulatory--shared-path-bicycles-and-pedestrians--g1",
+      "old_target": "regulatory--bicycles-and-pedestrians-path",
+      "new_target": "regulatory--shared-path-pedestrians-and-bicycles",
+      "action": "train",
+      "reason": "Merge only equivalent source meanings and visual variants."
+    }
+  ]
+}

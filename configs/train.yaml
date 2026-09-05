@@ -1,63 +1,41 @@
-# YOLOv8 Training Configuration (CUDA Server - Production)
-# Purpose: Full training on CUDA server with complete hyperparameters
-# Usage: yolo train cfg=configs/train.yaml data=configs/data.yaml
-
-# =============================================================================
-# Model & Input
-# =============================================================================
 model: yolov8m.pt
-imgsz: 1280  # MUST match tile size, do not change
-
-# =============================================================================
-# Training Control
-# =============================================================================
-epochs: 150
-batch: 48        # RTX 6000 Pro 96GB (27.7G@16 -> ~80G@48)
-device: 0        # Single GPU, or [0,1,2,3] for multi-GPU
-workers: 10
-patience: 50     # Early stopping patience
-save_period: 5   # 每5个epoch保存一次checkpoint
-cache: False     # 不缓存 (RAM需104GB, disk需2.5TB，都不够)
-
-# =============================================================================
-# Optimizer
-# =============================================================================
+imgsz: 1280
+epochs: 100
+patience: 20
 optimizer: AdamW
 lr0: 0.001
 lrf: 0.01
-momentum: 0.937
 weight_decay: 0.0005
 warmup_epochs: 3.0
-warmup_momentum: 0.8
-warmup_bias_lr: 0.1
-
-# =============================================================================
-# Augmentation - STRICT CONSTRAINTS (DO NOT MODIFY)
-# =============================================================================
-# Mosaic
+warmup_bias_lr: 0.0
+cos_lr: true
+seed: 42
+deterministic: true
+amp: false
+cache: false
+save_period: 5
 mosaic: 1.0
 close_mosaic: 10
-
-# Scale - CRITICAL: 0.1 means [0.9x, 1.1x], protects 20px tiny objects
 scale: 0.1
-
-# Geometric - ALL DISABLED for traffic signs
 degrees: 0.0
+translate: 0.0
 shear: 0.0
 perspective: 0.0
+fliplr: 0.0
+flipud: 0.0
 mixup: 0.0
-
-# Flip
-flipud: 0.0      # No vertical flip (signs have orientation)
-fliplr: 0.5      # Horizontal flip OK
-
-# Color (default values, safe for multi-scale objects)
+copy_paste: 0.0
+cutmix: 0.0
+multi_scale: false
 hsv_h: 0.015
 hsv_s: 0.7
 hsv_v: 0.4
-
-# =============================================================================
-# Output
-# =============================================================================
-project: runs/mtsd
-name: yolov8m_production
+profiles:
+  desktop:
+    device: 0
+    batch: 2
+    workers: 4
+  server:
+    device: 0
+    batch: 8
+    workers: 8

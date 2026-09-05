@@ -1,0 +1,11 @@
+{
+  "started_at": "2026-09-05T16:53:19.288801+00:00",
+  "status": "ready_to_push",
+  "branch": "codex/europe-pipeline-refactor",
+  "source_head": "0c17172b532d51b17547c60517693226ed146765",
+  "original_workspace": "/Users/weixianfu/Documents/Projects/road-sign-eu-mvp",
+  "worktree": "/Users/weixianfu/Documents/Projects/road-sign-eu-mvp/.worktrees/europe-pipeline-refactor",
+  "updated_at": "2026-09-05T17:59:16.652628+00:00",
+  "local_tests_passed": 30,
+  "scope": "image preparation, supervised training code, original-image evaluation, analysis"
+}

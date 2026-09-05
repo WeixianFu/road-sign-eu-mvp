@@ -1,0 +1,38 @@
+{
+  "time": "2026-09-05T17:58:28.167555+00:00",
+  "action": "entrypoint_and_source_verification",
+  "entrypoints": [
+    {
+      "entrypoint": "rs-prepare",
+      "exit_code": 0,
+      "help": "usage: rs-prepare [-h] [--config CONFIG]\n\nPrepare original 401-class YOLO MTSD images\n\noptions:\n  -h, --help       show this help message and exit\n  --config CONFIG\n"
+    },
+    {
+      "entrypoint": "rs-preview",
+      "exit_code": 0,
+      "help": "usage: rs-preview [-h] --image IMAGE --labels LABELS\n                  (--ontology ONTOLOGY | --data DATA) [--tiles] --output\n                  OUTPUT\n\nPreview source or prepared YOLO image labels\n\noptions:\n  -h, --help           show this help message and exit\n  --image IMAGE\n  --labels LABELS\n  --ontology ONTOLOGY  Original 401-class ontology CSV\n  --data DATA          Prepared data.yaml\n  --tiles\n  --output OUTPUT\n"
+    },
+    {
+      "entrypoint": "rs-train",
+      "exit_code": 0,
+      "help": "usage: rs-train [-h] --data DATA [--config CONFIG]\n                [--profile {desktop,server}] --output OUTPUT [--resume RESUME]\n\nTrain on prepared MTSD tiles and safe full views\n\noptions:\n  -h, --help            show this help message and exit\n  --data DATA\n  --config CONFIG\n  --profile {desktop,server}\n  --output OUTPUT\n  --resume RESUME\n"
+    },
+    {
+      "entrypoint": "rs-predict",
+      "exit_code": 0,
+      "help": "usage: rs-predict [-h] --coco COCO --weights WEIGHTS [--config CONFIG]\n                  --output OUTPUT [--resume]\n\nPredict MTSD original images with tiled YOLO\n\noptions:\n  -h, --help         show this help message and exit\n  --coco COCO\n  --weights WEIGHTS\n  --config CONFIG\n  --output OUTPUT\n  --resume\n"
+    },
+    {
+      "entrypoint": "rs-evaluate",
+      "exit_code": 0,
+      "help": "usage: rs-evaluate [-h] --coco COCO --predictions PREDICTIONS --output OUTPUT\n                   [--confidence CONFIDENCE]\n\nStandard COCO original-image evaluation\n\noptions:\n  -h, --help            show this help message and exit\n  --coco COCO\n  --predictions PREDICTIONS\n                        rs-predict output directory\n  --output OUTPUT\n  --confidence CONFIDENCE\n"
+    },
+    {
+      "entrypoint": "rs-analyze",
+      "exit_code": 0,
+      "help": "usage: rs-analyze [-h] {dataset,training,errors} ...\n\nAnalyze datasets, training curves and FP/FN cases\n\npositional arguments:\n  {dataset,training,errors}\n\noptions:\n  -h, --help            show this help message and exit\n"
+    }
+  ],
+  "python39_syntax": "passed",
+  "original_inventory_changes": []
+}

@@ -1,0 +1,8 @@
+imgsz: 1280
+overlap: 0.2
+confidence: 0.001
+tile_iou: 0.7
+merge_iou: 0.5
+max_detections: 1000
+tile_batch: 2
+device: 0

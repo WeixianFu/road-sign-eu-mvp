@@ -1,0 +1,402 @@
+source_id,source_name,action,target,reason
+0,warning--traffic-merges-right--g1,train,warning--traffic-merges-right,Merge only equivalent source meanings and visual variants.
+1,warning--added-lane-right--g1,exclude,,Retain legacy scope; no geography claim.
+2,warning--playground--g1,exclude,,Retain legacy scope; no geography claim.
+3,other-sign,exclude,,Retain legacy scope; no geography claim.
+4,regulatory--no-stopping--g15,train,regulatory--no-stopping,Merge only equivalent source meanings and visual variants.
+5,regulatory--priority-road--g4,train,regulatory--priority-road,Merge only equivalent source meanings and visual variants.
+6,warning--pedestrian-stumble-train--g1,exclude,,Retain legacy scope; no geography claim.
+7,regulatory--maximum-speed-limit-45--g3,train,regulatory--maximum-speed-limit-45,Merge only equivalent source meanings and visual variants.
+8,regulatory--stop--g1,train,regulatory--stop,Merge only equivalent source meanings and visual variants.
+9,warning--railroad-crossing--g1,train,warning--railroad-crossing,Merge only equivalent source meanings and visual variants.
+10,information--end-of-built-up-area--g1,train,information--end-of-built-up-area,Merge only equivalent source meanings and visual variants.
+11,regulatory--pedestrians-only--g1,train,regulatory--pedestrians-only,Merge only equivalent source meanings and visual variants.
+12,regulatory--no-entry--g1,train,regulatory--no-entry,Merge only equivalent source meanings and visual variants.
+13,regulatory--one-way-straight--g1,train,regulatory--one-way-straight,Merge only equivalent source meanings and visual variants.
+14,complementary--maximum-speed-limit-15--g1,train,complementary--maximum-speed-limit-15,Merge only equivalent source meanings and visual variants.
+15,regulatory--keep-right--g4,train,regulatory--keep-right,Merge only equivalent source meanings and visual variants.
+16,regulatory--yield--g1,train,regulatory--yield,Merge only equivalent source meanings and visual variants.
+17,warning--pedestrians-crossing--g10,train,warning--pedestrians-crossing,Merge only equivalent source meanings and visual variants.
+18,regulatory--reversible-lanes--g2,exclude,,Retain legacy scope; no geography claim.
+19,regulatory--turn-left--g2,train,regulatory--turn-left,Merge only equivalent source meanings and visual variants.
+20,regulatory--no-parking--g2,train,regulatory--no-parking,Merge only equivalent source meanings and visual variants.
+21,regulatory--one-way-right--g1,train,regulatory--one-way-right,Merge only equivalent source meanings and visual variants.
+22,regulatory--one-way-left--g1,train,regulatory--one-way-left,Merge only equivalent source meanings and visual variants.
+23,warning--divided-highway-ends--g1,train,warning--divided-highway-ends,Merge only equivalent source meanings and visual variants.
+24,regulatory--maximum-speed-limit-55--g2,train,regulatory--maximum-speed-limit-55,Merge only equivalent source meanings and visual variants.
+25,information--pedestrians-crossing--g1,train,information--pedestrians-crossing,Merge only equivalent source meanings and visual variants.
+26,regulatory--no-right-turn--g1,train,regulatory--no-right-turn,Merge only equivalent source meanings and visual variants.
+27,information--tram-bus-stop--g2,exclude,,Retain legacy scope; no geography claim.
+28,regulatory--turn-right-ahead--g1,train,regulatory--turn-right-ahead,Merge only equivalent source meanings and visual variants.
+29,regulatory--no-overtaking--g1,train,regulatory--no-overtaking,Merge only equivalent source meanings and visual variants.
+30,regulatory--height-limit--g1,train,regulatory--height-limit,Merge only equivalent source meanings and visual variants.
+31,warning--domestic-animals--g3,exclude,,Retain legacy scope; no geography claim.
+32,warning--traffic-merges-left--g1,train,warning--traffic-merges-left,Merge only equivalent source meanings and visual variants.
+33,regulatory--maximum-speed-limit-35--g2,train,regulatory--maximum-speed-limit-35,Merge only equivalent source meanings and visual variants.
+34,regulatory--keep-right--g1,train,regulatory--keep-right,Merge only equivalent source meanings and visual variants.
+35,complementary--priority-route-at-intersection--g1,exclude,,Retain legacy scope; no geography claim.
+36,warning--texts--g1,train,warning--texts,Merge only equivalent source meanings and visual variants.
+37,complementary--maximum-speed-limit-20--g1,train,complementary--maximum-speed-limit-20,Merge only equivalent source meanings and visual variants.
+38,information--disabled-persons--g1,exclude,,Retain legacy scope; no geography claim.
+39,warning--crossroads--g1,train,warning--crossroads,Merge only equivalent source meanings and visual variants.
+40,regulatory--no-parking--g1,train,regulatory--no-parking,Merge only equivalent source meanings and visual variants.
+41,warning--roadworks--g1,train,warning--roadworks,Merge only equivalent source meanings and visual variants.
+42,complementary--turn-left--g2,train,complementary--turn-left,Merge only equivalent source meanings and visual variants.
+43,warning--double-curve-first-right--g1,train,warning--double-curve-first-right,Merge only equivalent source meanings and visual variants.
+44,regulatory--turn-left-ahead--g1,train,regulatory--turn-left-ahead,Merge only equivalent source meanings and visual variants.
+45,information--parking--g1,exclude,,Retain legacy scope; no geography claim.
+46,regulatory--no-motorcycles--g1,exclude,,Retain legacy scope; no geography claim.
+47,complementary--chevron-left--g2,train,complementary--chevron-left,Merge only equivalent source meanings and visual variants.
+48,complementary--chevron-left--g3,train,complementary--chevron-left,Merge only equivalent source meanings and visual variants.
+49,complementary--chevron-right--g3,train,complementary--chevron-right,Merge only equivalent source meanings and visual variants.
+50,information--end-of-motorway--g1,train,information--end-of-motorway,Merge only equivalent source meanings and visual variants.
+51,regulatory--maximum-speed-limit-50--g1,train,regulatory--maximum-speed-limit-50,Merge only equivalent source meanings and visual variants.
+52,warning--texts--g3,train,warning--texts,Merge only equivalent source meanings and visual variants.
+53,warning--junction-with-a-side-road-acute-left--g1,train,warning--junction-with-a-side-road-acute-left,Merge only equivalent source meanings and visual variants.
+54,regulatory--no-heavy-goods-vehicles--g2,train,regulatory--no-heavy-goods-vehicles,Merge only equivalent source meanings and visual variants.
+55,regulatory--roundabout--g1,train,regulatory--roundabout,Merge only equivalent source meanings and visual variants.
+56,warning--texts--g2,train,warning--texts,Merge only equivalent source meanings and visual variants.
+57,warning--pedestrians-crossing--g4,train,warning--pedestrians-crossing,Merge only equivalent source meanings and visual variants.
+58,complementary--keep-left--g1,train,complementary--keep-left,Merge only equivalent source meanings and visual variants.
+59,warning--slippery-road-surface--g1,train,warning--slippery-road-surface,Merge only equivalent source meanings and visual variants.
+60,warning--double-curve-first-right--g2,train,warning--double-curve-first-right,Merge only equivalent source meanings and visual variants.
+61,regulatory--no-parking--g5,train,regulatory--no-parking,Merge only equivalent source meanings and visual variants.
+62,complementary--obstacle-delineator--g2,exclude,,Retain legacy scope; no geography claim.
+63,regulatory--keep-left--g1,train,regulatory--keep-left,Merge only equivalent source meanings and visual variants.
+64,warning--railroad-crossing-without-barriers--g4,train,warning--railroad-crossing-without-barriers,Merge only equivalent source meanings and visual variants.
+65,complementary--chevron-left--g1,train,complementary--chevron-left,Merge only equivalent source meanings and visual variants.
+66,regulatory--end-of-prohibition--g1,train,regulatory--end-of-prohibition,Merge only equivalent source meanings and visual variants.
+67,warning--junction-with-a-side-road-perpendicular-right--g1,train,warning--junction-with-a-side-road-perpendicular-right,Merge only equivalent source meanings and visual variants.
+68,complementary--obstacle-delineator--g1,exclude,,Retain legacy scope; no geography claim.
+69,regulatory--maximum-speed-limit-45--g1,train,regulatory--maximum-speed-limit-45,Merge only equivalent source meanings and visual variants.
+70,regulatory--weight-limit--g1,train,regulatory--weight-limit,Merge only equivalent source meanings and visual variants.
+71,warning--slippery-road-surface--g2,train,warning--slippery-road-surface,Merge only equivalent source meanings and visual variants.
+72,complementary--distance--g3,train,complementary--distance,Merge only equivalent source meanings and visual variants.
+73,warning--junction-with-a-side-road-perpendicular-left--g3,train,warning--junction-with-a-side-road-perpendicular-left,Merge only equivalent source meanings and visual variants.
+74,regulatory--go-straight--g1,train,regulatory--go-straight,Merge only equivalent source meanings and visual variants.
+75,information--road-bump--g1,exclude,,Retain legacy scope; no geography claim.
+76,warning--children--g1,train,warning--children,Merge only equivalent source meanings and visual variants.
+77,regulatory--maximum-speed-limit-40--g1,train,regulatory--maximum-speed-limit-40,Merge only equivalent source meanings and visual variants.
+78,regulatory--no-buses--g3,exclude,,Retain legacy scope; no geography claim.
+79,regulatory--no-heavy-goods-vehicles--g4,train,regulatory--no-heavy-goods-vehicles,Merge only equivalent source meanings and visual variants.
+80,complementary--chevron-right-unsure--g6,review,,Source chevron-right-unsure is not a confirmed directional label.
+81,complementary--chevron-right--g5,train,complementary--chevron-right,Merge only equivalent source meanings and visual variants.
+82,complementary--chevron-right--g1,train,complementary--chevron-right,Merge only equivalent source meanings and visual variants.
+83,information--stairs--g1,exclude,,Retain legacy scope; no geography claim.
+84,warning--curve-right--g1,train,warning--curve-right,Merge only equivalent source meanings and visual variants.
+85,regulatory--maximum-speed-limit-30--g1,train,regulatory--maximum-speed-limit-30,Merge only equivalent source meanings and visual variants.
+86,complementary--pass-right--g1,exclude,,Retain legacy scope; no geography claim.
+87,complementary--chevron-right--g4,train,complementary--chevron-right,Merge only equivalent source meanings and visual variants.
+88,warning--t-roads--g1,train,warning--t-roads,Merge only equivalent source meanings and visual variants.
+89,regulatory--no-u-turn--g2,train,regulatory--no-u-turn,Merge only equivalent source meanings and visual variants.
+90,warning--junction-with-a-side-road-perpendicular-right--g3,train,warning--junction-with-a-side-road-perpendicular-right,Merge only equivalent source meanings and visual variants.
+91,warning--horizontal-alignment-right--g1,exclude,,Retain legacy scope; no geography claim.
+92,warning--pedestrians-crossing--g1,train,warning--pedestrians-crossing,Merge only equivalent source meanings and visual variants.
+93,regulatory--keep-left--g2,train,regulatory--keep-left,Merge only equivalent source meanings and visual variants.
+94,warning--wombat-crossing--g1,exclude,,Retain legacy scope; no geography claim.
+95,regulatory--no-hawkers--g1,exclude,,Retain legacy scope; no geography claim.
+96,warning--railroad-crossing-with-barriers--g1,train,warning--railroad-crossing-with-barriers,Merge only equivalent source meanings and visual variants.
+97,warning--uneven-road--g2,train,warning--uneven-road,Merge only equivalent source meanings and visual variants.
+98,complementary--extent-of-prohibition-area-both-direction--g1,exclude,,Retain legacy scope; no geography claim.
+99,warning--t-roads--g2,train,warning--t-roads,Merge only equivalent source meanings and visual variants.
+100,regulatory--turn-left--g1,train,regulatory--turn-left,Merge only equivalent source meanings and visual variants.
+101,regulatory--turn-left--g3,train,regulatory--turn-left,Merge only equivalent source meanings and visual variants.
+102,warning--roundabout--g1,train,warning--roundabout,Merge only equivalent source meanings and visual variants.
+103,information--parking--g3,exclude,,Retain legacy scope; no geography claim.
+104,regulatory--turn-right--g2,train,regulatory--turn-right,Merge only equivalent source meanings and visual variants.
+105,regulatory--no-motor-vehicles--g4,exclude,,Retain legacy scope; no geography claim.
+106,regulatory--shared-path-pedestrians-and-bicycles--g1,train,regulatory--shared-path-pedestrians-and-bicycles,Merge only equivalent source meanings and visual variants.
+107,regulatory--no-overtaking--g5,train,regulatory--no-overtaking,Merge only equivalent source meanings and visual variants.
+108,regulatory--maximum-speed-limit-5--g1,train,regulatory--maximum-speed-limit-5,Merge only equivalent source meanings and visual variants.
+109,complementary--go-left--g1,train,complementary--go-left,Merge only equivalent source meanings and visual variants.
+110,warning--double-curve-first-left--g1,train,warning--double-curve-first-left,Merge only equivalent source meanings and visual variants.
+111,regulatory--go-straight-or-turn-left--g2,train,regulatory--go-straight-or-turn-left,Merge only equivalent source meanings and visual variants.
+112,regulatory--turn-right--g3,train,regulatory--turn-right,Merge only equivalent source meanings and visual variants.
+113,information--interstate-route--g1,exclude,,Retain legacy scope; no geography claim.
+114,regulatory--lane-control--g1,exclude,,Retain legacy scope; no geography claim.
+115,warning--road-bump--g2,train,warning--road-bump,Merge only equivalent source meanings and visual variants.
+116,warning--roadworks--g3,train,warning--roadworks,Merge only equivalent source meanings and visual variants.
+117,regulatory--one-way-left--g3,train,regulatory--one-way-left,Merge only equivalent source meanings and visual variants.
+118,warning--narrow-bridge--g1,train,warning--narrow-bridge,Merge only equivalent source meanings and visual variants.
+119,complementary--maximum-speed-limit-50--g1,train,complementary--maximum-speed-limit-50,Merge only equivalent source meanings and visual variants.
+120,warning--curve-left--g2,train,warning--curve-left,Merge only equivalent source meanings and visual variants.
+121,regulatory--maximum-speed-limit-100--g1,train,regulatory--maximum-speed-limit-100,Merge only equivalent source meanings and visual variants.
+122,regulatory--maximum-speed-limit-120--g1,train,regulatory--maximum-speed-limit-120,Merge only equivalent source meanings and visual variants.
+123,information--dead-end--g1,exclude,,Retain legacy scope; no geography claim.
+124,complementary--maximum-speed-limit-55--g1,train,complementary--maximum-speed-limit-55,Merge only equivalent source meanings and visual variants.
+125,warning--junction-with-a-side-road-acute-right--g1,train,warning--junction-with-a-side-road-acute-right,Merge only equivalent source meanings and visual variants.
+126,regulatory--maximum-speed-limit-70--g1,train,regulatory--maximum-speed-limit-70,Merge only equivalent source meanings and visual variants.
+127,regulatory--no-u-turn--g3,train,regulatory--no-u-turn,Merge only equivalent source meanings and visual variants.
+128,regulatory--no-right-turn--g2,train,regulatory--no-right-turn,Merge only equivalent source meanings and visual variants.
+129,regulatory--no-stopping--g5,train,regulatory--no-stopping,Merge only equivalent source meanings and visual variants.
+130,warning--roadworks--g2,train,warning--roadworks,Merge only equivalent source meanings and visual variants.
+131,complementary--go-right--g1,exclude,,Retain legacy scope; no geography claim.
+132,warning--wild-animals--g4,exclude,,Retain legacy scope; no geography claim.
+133,regulatory--maximum-speed-limit-60--g1,train,regulatory--maximum-speed-limit-60,Merge only equivalent source meanings and visual variants.
+134,information--bike-route--g1,exclude,,Retain legacy scope; no geography claim.
+135,information--food--g2,exclude,,Retain legacy scope; no geography claim.
+136,regulatory--go-straight-or-turn-left--g3,train,regulatory--go-straight-or-turn-left,Merge only equivalent source meanings and visual variants.
+137,regulatory--turn-right-ahead--g2,train,regulatory--turn-right-ahead,Merge only equivalent source meanings and visual variants.
+138,regulatory--no-stopping--g2,train,regulatory--no-stopping,Merge only equivalent source meanings and visual variants.
+139,regulatory--give-way-to-oncoming-traffic--g1,train,regulatory--give-way-to-oncoming-traffic,Merge only equivalent source meanings and visual variants.
+140,warning--children--g2,train,warning--children,Merge only equivalent source meanings and visual variants.
+141,complementary--maximum-speed-limit-35--g1,train,complementary--maximum-speed-limit-35,Merge only equivalent source meanings and visual variants.
+142,warning--road-bump--g1,train,warning--road-bump,Merge only equivalent source meanings and visual variants.
+143,regulatory--no-u-turn--g1,train,regulatory--no-u-turn,Merge only equivalent source meanings and visual variants.
+144,warning--pass-left-or-right--g2,train,warning--pass-left-or-right,Merge only equivalent source meanings and visual variants.
+145,regulatory--no-overtaking--g2,train,regulatory--no-overtaking,Merge only equivalent source meanings and visual variants.
+146,regulatory--turn-right--g1,train,regulatory--turn-right,Merge only equivalent source meanings and visual variants.
+147,warning--curve-right--g2,train,warning--curve-right,Merge only equivalent source meanings and visual variants.
+148,regulatory--no-turns--g1,exclude,,Retain legacy scope; no geography claim.
+149,regulatory--no-turn-on-red--g3,exclude,,Retain legacy scope; no geography claim.
+150,regulatory--no-parking-or-no-stopping--g2,review,,Source combines no-parking and no-stopping; image review required.
+151,regulatory--stop-here-on-red-or-flashing-light--g2,exclude,,Retain legacy scope; no geography claim.
+152,regulatory--maximum-speed-limit-25--g2,train,regulatory--maximum-speed-limit-25,Merge only equivalent source meanings and visual variants.
+153,warning--junction-with-a-side-road-perpendicular-left--g1,train,warning--junction-with-a-side-road-perpendicular-left,Merge only equivalent source meanings and visual variants.
+154,warning--winding-road-first-right--g1,train,warning--winding-road-first-right,Merge only equivalent source meanings and visual variants.
+155,warning--accidental-area-unsure--g2,exclude,,Retain legacy scope; no geography claim.
+156,regulatory--no-overtaking--g4,train,regulatory--no-overtaking,Merge only equivalent source meanings and visual variants.
+157,warning--school-zone--g2,train,warning--school-zone,Merge only equivalent source meanings and visual variants.
+158,regulatory--wrong-way--g1,train,regulatory--wrong-way,Merge only equivalent source meanings and visual variants.
+159,regulatory--road-closed--g2,train,regulatory--road-closed,Merge only equivalent source meanings and visual variants.
+160,regulatory--no-stopping--g8,train,regulatory--no-stopping,Merge only equivalent source meanings and visual variants.
+161,complementary--distance--g1,train,complementary--distance,Merge only equivalent source meanings and visual variants.
+162,warning--emergency-vehicles--g1,train,warning--emergency-vehicles,Merge only equivalent source meanings and visual variants.
+163,warning--kangaloo-crossing--g1,exclude,,Retain legacy scope; no geography claim.
+164,complementary--maximum-speed-limit-30--g1,train,complementary--maximum-speed-limit-30,Merge only equivalent source meanings and visual variants.
+165,warning--turn-right--g1,train,warning--turn-right,Merge only equivalent source meanings and visual variants.
+166,regulatory--truck-speed-limit-60--g1,train,regulatory--truck-speed-limit-60,Merge only equivalent source meanings and visual variants.
+167,regulatory--priority-over-oncoming-vehicles--g1,train,regulatory--priority-over-oncoming-vehicles,Merge only equivalent source meanings and visual variants.
+168,information--pedestrians-crossing--g2,train,information--pedestrians-crossing,Merge only equivalent source meanings and visual variants.
+169,information--parking--g5,exclude,,Retain legacy scope; no geography claim.
+170,information--children--g1,exclude,,Retain legacy scope; no geography claim.
+171,regulatory--passing-lane-ahead--g1,exclude,,Retain legacy scope; no geography claim.
+172,regulatory--no-motor-vehicles-except-motorcycles--g2,train,regulatory--no-motor-vehicles-except-motorcycles,Merge only equivalent source meanings and visual variants.
+173,information--safety-area--g2,exclude,,Retain legacy scope; no geography claim.
+174,warning--roundabout--g25,train,warning--roundabout,Merge only equivalent source meanings and visual variants.
+175,regulatory--no-left-turn--g1,train,regulatory--no-left-turn,Merge only equivalent source meanings and visual variants.
+176,warning--roadworks--g4,train,warning--roadworks,Merge only equivalent source meanings and visual variants.
+177,complementary--trucks--g1,train,complementary--trucks,Merge only equivalent source meanings and visual variants.
+178,regulatory--go-straight--g3,train,regulatory--go-straight,Merge only equivalent source meanings and visual variants.
+179,warning--steep-ascent--g7,exclude,,Retain legacy scope; no geography claim.
+180,warning--divided-highway-ends--g2,train,warning--divided-highway-ends,Merge only equivalent source meanings and visual variants.
+181,information--parking--g45,exclude,,Retain legacy scope; no geography claim.
+182,regulatory--buses-only--g1,exclude,,Retain legacy scope; no geography claim.
+183,regulatory--maximum-speed-limit-20--g1,train,regulatory--maximum-speed-limit-20,Merge only equivalent source meanings and visual variants.
+184,warning--road-narrows--g1,train,warning--road-narrows,Merge only equivalent source meanings and visual variants.
+185,warning--road-narrows-left--g1,train,warning--road-narrows-left,Merge only equivalent source meanings and visual variants.
+186,complementary--accident-area--g3,exclude,,Retain legacy scope; no geography claim.
+187,warning--other-danger--g1,train,warning--other-danger,Merge only equivalent source meanings and visual variants.
+188,regulatory--one-way-left--g2,train,regulatory--one-way-left,Merge only equivalent source meanings and visual variants.
+189,warning--road-narrows-left--g2,train,warning--road-narrows-left,Merge only equivalent source meanings and visual variants.
+190,warning--trucks-crossing--g1,train,warning--trucks-crossing,Merge only equivalent source meanings and visual variants.
+191,regulatory--bicycles-only--g1,train,regulatory--bicycles-only,Merge only equivalent source meanings and visual variants.
+192,complementary--maximum-speed-limit-70--g1,train,complementary--maximum-speed-limit-70,Merge only equivalent source meanings and visual variants.
+193,warning--curve-left--g1,train,warning--curve-left,Merge only equivalent source meanings and visual variants.
+194,warning--domestic-animals--g1,exclude,,Retain legacy scope; no geography claim.
+195,regulatory--maximum-speed-limit-30--g3,train,regulatory--maximum-speed-limit-30,Merge only equivalent source meanings and visual variants.
+196,warning--road-narrows-right--g2,train,warning--road-narrows-right,Merge only equivalent source meanings and visual variants.
+197,regulatory--keep-right--g6,train,regulatory--keep-right,Merge only equivalent source meanings and visual variants.
+198,information--living-street--g1,train,information--living-street,Merge only equivalent source meanings and visual variants.
+199,complementary--tow-away-zone--g1,train,complementary--tow-away-zone,Merge only equivalent source meanings and visual variants.
+200,regulatory--triple-lanes-turn-left-center-lane--g1,exclude,,Retain legacy scope; no geography claim.
+201,regulatory--maximum-speed-limit-90--g1,train,regulatory--maximum-speed-limit-90,Merge only equivalent source meanings and visual variants.
+202,complementary--both-directions--g1,train,complementary--both-directions,Merge only equivalent source meanings and visual variants.
+203,complementary--maximum-speed-limit-45--g1,train,complementary--maximum-speed-limit-45,Merge only equivalent source meanings and visual variants.
+204,warning--turn-left--g1,train,warning--turn-left,Merge only equivalent source meanings and visual variants.
+205,information--limited-access-road--g1,train,information--limited-access-road,Merge only equivalent source meanings and visual variants.
+206,regulatory--no-heavy-goods-vehicles--g1,train,regulatory--no-heavy-goods-vehicles,Merge only equivalent source meanings and visual variants.
+207,regulatory--maximum-speed-limit-80--g1,train,regulatory--maximum-speed-limit-80,Merge only equivalent source meanings and visual variants.
+208,complementary--maximum-speed-limit-75--g1,train,complementary--maximum-speed-limit-75,Merge only equivalent source meanings and visual variants.
+209,regulatory--dual-lanes-go-straight-on-right--g1,exclude,,Retain legacy scope; no geography claim.
+210,regulatory--do-not-block-intersection--g1,exclude,,Retain legacy scope; no geography claim.
+211,regulatory--radar-enforced--g1,exclude,,Retain legacy scope; no geography claim.
+212,warning--traffic-merges-right--g2,train,warning--traffic-merges-right,Merge only equivalent source meanings and visual variants.
+213,regulatory--stop--g10,exclude,,Retain legacy scope; no geography claim.
+214,regulatory--go-straight-or-turn-left--g1,train,regulatory--go-straight-or-turn-left,Merge only equivalent source meanings and visual variants.
+215,regulatory--no-straight-through--g2,exclude,,Retain legacy scope; no geography claim.
+216,regulatory--end-of-maximum-speed-limit-70--g2,train,regulatory--end-of-maximum-speed-limit-70,Merge only equivalent source meanings and visual variants.
+217,regulatory--minimum-safe-distance--g1,exclude,,Retain legacy scope; no geography claim.
+218,regulatory--no-turn-on-red--g1,exclude,,Retain legacy scope; no geography claim.
+219,regulatory--stop-signals--g1,exclude,,Retain legacy scope; no geography claim.
+220,information--gas-station--g1,exclude,,Retain legacy scope; no geography claim.
+221,regulatory--end-of-speed-limit-zone--g1,train,regulatory--end-of-speed-limit-zone,Merge only equivalent source meanings and visual variants.
+222,warning--two-way-traffic--g1,train,warning--two-way-traffic,Merge only equivalent source meanings and visual variants.
+223,warning--railroad-crossing-without-barriers--g3,train,warning--railroad-crossing-without-barriers,Merge only equivalent source meanings and visual variants.
+224,information--hospital--g1,exclude,,Retain legacy scope; no geography claim.
+225,warning--stop-ahead--g9,train,warning--stop-ahead,Merge only equivalent source meanings and visual variants.
+226,warning--railroad-crossing--g3,train,warning--railroad-crossing,Merge only equivalent source meanings and visual variants.
+227,information--motorway--g1,train,information--motorway,Merge only equivalent source meanings and visual variants.
+228,information--emergency-facility--g2,exclude,,Retain legacy scope; no geography claim.
+229,warning--road-widens--g1,exclude,,Retain legacy scope; no geography claim.
+230,regulatory--road-closed-to-vehicles--g3,train,regulatory--road-closed-to-vehicles,Merge only equivalent source meanings and visual variants.
+231,information--highway-exit--g1,exclude,,Retain legacy scope; no geography claim.
+232,regulatory--no-turn-on-red--g2,exclude,,Retain legacy scope; no geography claim.
+233,regulatory--no-pedestrians--g2,train,regulatory--no-pedestrians,Merge only equivalent source meanings and visual variants.
+234,regulatory--width-limit--g1,train,regulatory--width-limit,Merge only equivalent source meanings and visual variants.
+235,warning--hairpin-curve-right--g1,train,warning--hairpin-curve-right,Merge only equivalent source meanings and visual variants.
+236,complementary--keep-right--g1,exclude,,Retain legacy scope; no geography claim.
+237,warning--junction-with-a-side-road-perpendicular-left--g4,train,warning--junction-with-a-side-road-perpendicular-left,Merge only equivalent source meanings and visual variants.
+238,warning--flaggers-in-road--g1,train,warning--flaggers-in-road,Merge only equivalent source meanings and visual variants.
+239,warning--wild-animals--g1,exclude,,Retain legacy scope; no geography claim.
+240,warning--traffic-signals--g4,train,warning--traffic-signals,Merge only equivalent source meanings and visual variants.
+241,warning--crossroads--g3,train,warning--crossroads,Merge only equivalent source meanings and visual variants.
+242,warning--two-way-traffic--g2,train,warning--two-way-traffic,Merge only equivalent source meanings and visual variants.
+243,warning--traffic-signals--g2,train,warning--traffic-signals,Merge only equivalent source meanings and visual variants.
+244,regulatory--one-way-right--g2,train,regulatory--one-way-right,Merge only equivalent source meanings and visual variants.
+245,regulatory--no-overtaking-by-heavy-goods-vehicles--g1,exclude,,Retain legacy scope; no geography claim.
+246,complementary--distance--g2,train,complementary--distance,Merge only equivalent source meanings and visual variants.
+247,warning--double-reverse-curve-right--g1,train,warning--double-reverse-curve-right,Merge only equivalent source meanings and visual variants.
+248,regulatory--one-way-right--g3,train,regulatory--one-way-right,Merge only equivalent source meanings and visual variants.
+249,warning--double-curve-first-left--g2,train,warning--double-curve-first-left,Merge only equivalent source meanings and visual variants.
+250,complementary--except-bicycles--g1,exclude,,Retain legacy scope; no geography claim.
+251,warning--traffic-signals--g1,train,warning--traffic-signals,Merge only equivalent source meanings and visual variants.
+252,complementary--chevron-left--g5,train,complementary--chevron-left,Merge only equivalent source meanings and visual variants.
+253,warning--road-widens-right--g1,train,warning--road-widens-right,Merge only equivalent source meanings and visual variants.
+254,regulatory--maximum-speed-limit-40--g6,train,regulatory--maximum-speed-limit-40,Merge only equivalent source meanings and visual variants.
+255,warning--horizontal-alignment-left--g1,exclude,,Retain legacy scope; no geography claim.
+256,regulatory--no-bicycles--g1,train,regulatory--no-bicycles,Merge only equivalent source meanings and visual variants.
+257,regulatory--maximum-speed-limit-15--g1,train,regulatory--maximum-speed-limit-15,Merge only equivalent source meanings and visual variants.
+258,regulatory--no-straight-through--g1,exclude,,Retain legacy scope; no geography claim.
+259,regulatory--parking-restrictions--g2,exclude,,Retain legacy scope; no geography claim.
+260,regulatory--no-parking-or-no-stopping--g1,review,,Source combines no-parking and no-stopping; image review required.
+261,warning--uneven-road--g6,train,warning--uneven-road,Merge only equivalent source meanings and visual variants.
+262,complementary--go-right--g2,exclude,,Retain legacy scope; no geography claim.
+263,warning--railroad-intersection--g3,train,warning--railroad-intersection,Merge only equivalent source meanings and visual variants.
+264,warning--railroad-crossing--g4,train,warning--railroad-crossing,Merge only equivalent source meanings and visual variants.
+265,information--airport--g2,exclude,,Retain legacy scope; no geography claim.
+266,complementary--trucks-turn-right--g1,train,complementary--trucks-turn-right,Merge only equivalent source meanings and visual variants.
+267,regulatory--end-of-bicycles-only--g1,exclude,,Retain legacy scope; no geography claim.
+268,warning--road-narrows--g2,train,warning--road-narrows,Merge only equivalent source meanings and visual variants.
+269,warning--pedestrians-crossing--g5,train,warning--pedestrians-crossing,Merge only equivalent source meanings and visual variants.
+270,regulatory--maximum-speed-limit-led-60--g1,train,regulatory--maximum-speed-limit-60,Merge only equivalent source meanings and visual variants.
+271,regulatory--no-parking-or-no-stopping--g3,review,,Source combines no-parking and no-stopping; image review required.
+272,regulatory--pedestrians-only--g2,train,regulatory--pedestrians-only,Merge only equivalent source meanings and visual variants.
+273,warning--slippery-motorcycles--g1,exclude,,Retain legacy scope; no geography claim.
+274,regulatory--pass-on-either-side--g2,train,regulatory--pass-on-either-side,Merge only equivalent source meanings and visual variants.
+275,complementary--one-direction-right--g1,train,complementary--one-direction-right,Merge only equivalent source meanings and visual variants.
+276,warning--pedestrians-crossing--g9,train,warning--pedestrians-crossing,Merge only equivalent source meanings and visual variants.
+277,regulatory--go-straight-or-turn-right--g1,train,regulatory--go-straight-or-turn-right,Merge only equivalent source meanings and visual variants.
+278,information--end-of-living-street--g1,train,information--end-of-living-street,Merge only equivalent source meanings and visual variants.
+279,information--bus-stop--g1,exclude,,Retain legacy scope; no geography claim.
+280,warning--winding-road-first-left--g1,train,warning--winding-road-first-left,Merge only equivalent source meanings and visual variants.
+281,warning--bus-stop-ahead--g3,exclude,,Retain legacy scope; no geography claim.
+282,warning--double-turn-first-right--g1,train,warning--double-turn-first-right,Merge only equivalent source meanings and visual variants.
+283,warning--winding-road-first-right--g3,train,warning--winding-road-first-right,Merge only equivalent source meanings and visual variants.
+284,warning--railroad-crossing-with-barriers--g2,train,warning--railroad-crossing-with-barriers,Merge only equivalent source meanings and visual variants.
+285,regulatory--no-motor-vehicles-except-motorcycles--g1,train,regulatory--no-motor-vehicles-except-motorcycles,Merge only equivalent source meanings and visual variants.
+286,warning--railroad-intersection--g4,train,warning--railroad-intersection,Merge only equivalent source meanings and visual variants.
+287,complementary--turn-right--g2,exclude,,Retain legacy scope; no geography claim.
+288,regulatory--keep-right--g2,train,regulatory--keep-right,Merge only equivalent source meanings and visual variants.
+289,warning--bicycles-crossing--g2,train,warning--bicycles-crossing,Merge only equivalent source meanings and visual variants.
+290,regulatory--bicycles-only--g2,train,regulatory--bicycles-only,Merge only equivalent source meanings and visual variants.
+291,regulatory--maximum-speed-limit-led-80--g1,train,regulatory--maximum-speed-limit-80,Merge only equivalent source meanings and visual variants.
+292,warning--height-restriction--g2,train,warning--height-restriction,Merge only equivalent source meanings and visual variants.
+293,regulatory--maximum-speed-limit-50--g6,train,regulatory--maximum-speed-limit-50,Merge only equivalent source meanings and visual variants.
+294,warning--hairpin-curve-right--g4,train,warning--hairpin-curve-right,Merge only equivalent source meanings and visual variants.
+295,warning--traffic-signals--g3,train,warning--traffic-signals,Merge only equivalent source meanings and visual variants.
+296,regulatory--mopeds-and-bicycles-only--g1,train,regulatory--mopeds-and-bicycles-only,Merge only equivalent source meanings and visual variants.
+297,regulatory--no-left-turn--g2,train,regulatory--no-left-turn,Merge only equivalent source meanings and visual variants.
+298,regulatory--end-of-no-parking--g1,train,regulatory--end-of-no-parking,Merge only equivalent source meanings and visual variants.
+299,regulatory--end-of-priority-road--g1,train,regulatory--end-of-priority-road,Merge only equivalent source meanings and visual variants.
+300,regulatory--no-heavy-goods-vehicles-or-buses--g1,exclude,,Retain legacy scope; no geography claim.
+301,warning--uneven-roads-ahead--g1,exclude,,Retain legacy scope; no geography claim.
+302,warning--hairpin-curve-left--g1,train,warning--hairpin-curve-left,Merge only equivalent source meanings and visual variants.
+303,information--trailer-camping--g1,exclude,,Retain legacy scope; no geography claim.
+304,regulatory--no-stopping--g4,review,,Legacy manual no-parking override conflicts with source no-stopping name; inspect images.
+305,regulatory--no-pedestrians-or-bicycles--g1,exclude,,Retain legacy scope; no geography claim.
+306,regulatory--no-heavy-goods-vehicles--g5,train,regulatory--no-heavy-goods-vehicles,Merge only equivalent source meanings and visual variants.
+307,warning--other-danger--g3,train,warning--other-danger,Merge only equivalent source meanings and visual variants.
+308,regulatory--dual-lanes-go-straight-on-left--g1,exclude,,Retain legacy scope; no geography claim.
+309,regulatory--u-turn--g1,exclude,,Retain legacy scope; no geography claim.
+310,complementary--maximum-speed-limit-40--g1,train,complementary--maximum-speed-limit-40,Merge only equivalent source meanings and visual variants.
+311,regulatory--stop-here-on-red-or-flashing-light--g1,exclude,,Retain legacy scope; no geography claim.
+312,information--parking--g6,exclude,,Retain legacy scope; no geography claim.
+313,regulatory--no-pedestrians--g3,train,regulatory--no-pedestrians,Merge only equivalent source meanings and visual variants.
+314,warning--traffic-merges-left--g2,train,warning--traffic-merges-left,Merge only equivalent source meanings and visual variants.
+315,regulatory--text-four-lines--g1,exclude,,Retain legacy scope; no geography claim.
+316,regulatory--road-closed-to-vehicles--g1,train,regulatory--road-closed-to-vehicles,Merge only equivalent source meanings and visual variants.
+317,regulatory--dual-path-bicycles-and-pedestrians--g1,train,regulatory--dual-path-bicycles-and-pedestrians,Merge only equivalent source meanings and visual variants.
+318,regulatory--maximum-speed-limit-40--g3,train,regulatory--maximum-speed-limit-40,Merge only equivalent source meanings and visual variants.
+319,information--parking--g2,exclude,,Retain legacy scope; no geography claim.
+320,warning--bicycles-crossing--g3,train,warning--bicycles-crossing,Merge only equivalent source meanings and visual variants.
+321,regulatory--pass-on-either-side--g1,train,regulatory--pass-on-either-side,Merge only equivalent source meanings and visual variants.
+322,regulatory--no-bicycles--g3,train,regulatory--no-bicycles,Merge only equivalent source meanings and visual variants.
+323,warning--pass-left-or-right--g1,train,warning--pass-left-or-right,Merge only equivalent source meanings and visual variants.
+324,regulatory--maximum-speed-limit-10--g1,train,regulatory--maximum-speed-limit-10,Merge only equivalent source meanings and visual variants.
+325,complementary--chevron-left--g4,train,complementary--chevron-left,Merge only equivalent source meanings and visual variants.
+326,warning--falling-rocks-or-debris-right--g2,train,warning--falling-rocks-or-debris-right,Merge only equivalent source meanings and visual variants.
+327,regulatory--maximum-speed-limit-led-100--g1,train,regulatory--maximum-speed-limit-100,Merge only equivalent source meanings and visual variants.
+328,warning--pedestrians-crossing--g12,train,warning--pedestrians-crossing,Merge only equivalent source meanings and visual variants.
+329,complementary--buses--g1,train,complementary--buses,Merge only equivalent source meanings and visual variants.
+330,warning--road-narrows-right--g1,train,warning--road-narrows-right,Merge only equivalent source meanings and visual variants.
+331,information--highway-interstate-route--g2,exclude,,Retain legacy scope; no geography claim.
+332,warning--y-roads--g1,train,warning--y-roads,Merge only equivalent source meanings and visual variants.
+333,warning--railroad-crossing-without-barriers--g1,train,warning--railroad-crossing-without-barriers,Merge only equivalent source meanings and visual variants.
+334,warning--narrow-bridge--g3,train,warning--narrow-bridge,Merge only equivalent source meanings and visual variants.
+335,regulatory--maximum-speed-limit-110--g1,train,regulatory--maximum-speed-limit-110,Merge only equivalent source meanings and visual variants.
+336,regulatory--no-right-turn--g3,train,regulatory--no-right-turn,Merge only equivalent source meanings and visual variants.
+337,information--telephone--g2,exclude,,Retain legacy scope; no geography claim.
+338,regulatory--stop--g2,exclude,,Retain legacy scope; no geography claim.
+339,regulatory--left-turn-yield-on-green--g1,exclude,,Retain legacy scope; no geography claim.
+340,warning--dual-lanes-right-turn-or-go-straight--g1,exclude,,Retain legacy scope; no geography claim.
+341,regulatory--dual-path-pedestrians-and-bicycles--g1,train,regulatory--dual-path-pedestrians-and-bicycles,Merge only equivalent source meanings and visual variants.
+342,regulatory--maximum-speed-limit-100--g3,train,regulatory--maximum-speed-limit-100,Merge only equivalent source meanings and visual variants.
+343,complementary--one-direction-left--g1,train,complementary--one-direction-left,Merge only equivalent source meanings and visual variants.
+344,regulatory--no-left-turn--g3,train,regulatory--no-left-turn,Merge only equivalent source meanings and visual variants.
+345,regulatory--go-straight-or-turn-right--g3,train,regulatory--go-straight-or-turn-right,Merge only equivalent source meanings and visual variants.
+346,warning--dip--g2,exclude,,Retain legacy scope; no geography claim.
+347,warning--bicycles-crossing--g1,train,warning--bicycles-crossing,Merge only equivalent source meanings and visual variants.
+348,regulatory--no-motorcycles--g2,exclude,,Retain legacy scope; no geography claim.
+349,regulatory--no-pedestrians--g1,train,regulatory--no-pedestrians,Merge only equivalent source meanings and visual variants.
+350,warning--falling-rocks-or-debris-right--g1,train,warning--falling-rocks-or-debris-right,Merge only equivalent source meanings and visual variants.
+351,warning--winding-road-first-left--g2,train,warning--winding-road-first-left,Merge only equivalent source meanings and visual variants.
+352,regulatory--end-of-maximum-speed-limit-30--g2,train,regulatory--end-of-maximum-speed-limit-30,Merge only equivalent source meanings and visual variants.
+353,warning--loop-270-degree--g1,exclude,,Retain legacy scope; no geography claim.
+354,complementary--maximum-speed-limit-25--g1,train,complementary--maximum-speed-limit-25,Merge only equivalent source meanings and visual variants.
+355,warning--falling-rocks-or-debris-right--g4,train,warning--falling-rocks-or-debris-right,Merge only equivalent source meanings and visual variants.
+356,regulatory--road-closed--g1,train,regulatory--road-closed,Merge only equivalent source meanings and visual variants.
+357,regulatory--maximum-speed-limit-65--g2,train,regulatory--maximum-speed-limit-65,Merge only equivalent source meanings and visual variants.
+358,warning--trail-crossing--g2,exclude,,Retain legacy scope; no geography claim.
+359,regulatory--no-vehicles-carrying-dangerous-goods--g1,exclude,,Retain legacy scope; no geography claim.
+360,information--end-of-limited-access-road--g1,train,information--end-of-limited-access-road,Merge only equivalent source meanings and visual variants.
+361,information--lodging--g1,exclude,,Retain legacy scope; no geography claim.
+362,information--telephone--g1,exclude,,Retain legacy scope; no geography claim.
+363,information--central-lane--g1,exclude,,Retain legacy scope; no geography claim.
+364,warning--offset-roads--g3,exclude,,Retain legacy scope; no geography claim.
+365,regulatory--no-motor-vehicle-trailers--g1,exclude,,Retain legacy scope; no geography claim.
+366,regulatory--roundabout--g2,train,regulatory--roundabout,Merge only equivalent source meanings and visual variants.
+367,warning--roadworks--g6,train,warning--roadworks,Merge only equivalent source meanings and visual variants.
+368,warning--crossroads-with-priority-to-the-right--g1,train,warning--crossroads-with-priority-to-the-right,Merge only equivalent source meanings and visual variants.
+369,information--no-parking--g3,exclude,,Retain legacy scope; no geography claim.
+370,information--gas-station--g3,exclude,,Retain legacy scope; no geography claim.
+371,regulatory--dual-lanes-turn-right-or-straight--g1,exclude,,Retain legacy scope; no geography claim.
+372,regulatory--maximum-speed-limit-25--g1,train,regulatory--maximum-speed-limit-25,Merge only equivalent source meanings and visual variants.
+373,regulatory--dual-lanes-turn-left-or-straight--g1,exclude,,Retain legacy scope; no geography claim.
+374,regulatory--no-mopeds-or-bicycles--g1,exclude,,Retain legacy scope; no geography claim.
+375,regulatory--no-bicycles--g2,train,regulatory--no-bicycles,Merge only equivalent source meanings and visual variants.
+376,warning--horizontal-alignment-right--g3,exclude,,Retain legacy scope; no geography claim.
+377,information--camp--g1,exclude,,Retain legacy scope; no geography claim.
+378,warning--pedestrians-crossing--g11,train,warning--pedestrians-crossing,Merge only equivalent source meanings and visual variants.
+379,regulatory--no-motor-vehicles--g1,exclude,,Retain legacy scope; no geography claim.
+380,warning--shared-lane-motorcycles-bicycles--g1,exclude,,Retain legacy scope; no geography claim.
+381,information--minimum-speed-40--g1,train,information--minimum-speed-40,Merge only equivalent source meanings and visual variants.
+382,information--dead-end-except-bicycles--g1,exclude,,Retain legacy scope; no geography claim.
+383,information--airport--g1,exclude,,Retain legacy scope; no geography claim.
+384,regulatory--do-not-stop-on-tracks--g1,exclude,,Retain legacy scope; no geography claim.
+385,warning--turn-right--g2,train,warning--turn-right,Merge only equivalent source meanings and visual variants.
+386,warning--trams-crossing--g1,exclude,,Retain legacy scope; no geography claim.
+387,warning--railroad-crossing-with-barriers--g4,train,warning--railroad-crossing-with-barriers,Merge only equivalent source meanings and visual variants.
+388,regulatory--end-of-maximum-speed-limit-70--g1,train,regulatory--end-of-maximum-speed-limit-70,Merge only equivalent source meanings and visual variants.
+389,regulatory--turning-vehicles-yield-to-pedestrians--g1,exclude,,Retain legacy scope; no geography claim.
+390,warning--playground--g3,exclude,,Retain legacy scope; no geography claim.
+391,regulatory--bicycles-only--g3,train,regulatory--bicycles-only,Merge only equivalent source meanings and visual variants.
+392,warning--hairpin-curve-left--g3,train,warning--hairpin-curve-left,Merge only equivalent source meanings and visual variants.
+393,regulatory--end-of-buses-only--g1,exclude,,Retain legacy scope; no geography claim.
+394,regulatory--dual-lanes-turn-left-no-u-turn--g1,exclude,,Retain legacy scope; no geography claim.
+395,regulatory--shared-path-bicycles-and-pedestrians--g1,train,regulatory--shared-path-pedestrians-and-bicycles,Merge only equivalent source meanings and visual variants.
+396,warning--equestrians-crossing--g2,exclude,,Retain legacy scope; no geography claim.
+397,regulatory--weight-limit-with-trucks--g1,exclude,,Retain legacy scope; no geography claim.
+398,regulatory--detour-left--g1,exclude,,Retain legacy scope; no geography claim.
+399,information--end-of-pedestrians-only--g2,exclude,,Retain legacy scope; no geography claim.
+400,warning--restricted-zone--g1,exclude,,Retain legacy scope; no geography claim.

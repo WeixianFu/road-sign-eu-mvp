@@ -1,0 +1,23 @@
+E501 Line too long (104 > 100)
+  --> src/roadsigns/training/run.py:68:101
+   |
+66 |         fixed = set(cfg) - {"device", "batch", "model"}
+67 |         if any(cfg[key] != previous["config"][key] for key in fixed):
+68 |             raise ValueError("Resume keeps the saved training recipe; only device and batch may change")
+   |                                                                                                     ^^^^
+69 |     logger = setup_logging(output / "train.log")
+70 |     model_path = cfg.pop("model")
+   |
+
+E501 Line too long (104 > 100)
+   --> src/roadsigns/training/run.py:100:101
+    |
+ 98 |     )
+ 99 |     event(
+100 |         output / "operations.jsonl", "complete", best_sha256=file_hash(output / "model/weights/best.pt")
+    |                                                                                                     ^^^^
+101 |     )
+102 |     logger.info("Training complete. Evaluate original images with rs-predict and rs-evaluate.")
+    |
+
+Found 2 errors.

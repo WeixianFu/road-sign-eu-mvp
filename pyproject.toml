@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "roadsigns-europe"
+version = "0.1.0"
+description = "MTSD image preparation, YOLO training and original-image evaluation"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.26,<2", "Pillow>=11,<12", "PyYAML>=6,<7"]
+
+[project.optional-dependencies]
+train = ["ultralytics==8.3.225", "opencv-python==4.11.0.86"]
+evaluate = ["pycocotools==2.0.10"]
+dev = ["pytest>=8,<9", "ruff==0.14.3"]
+
+[project.scripts]
+rs-prepare = "roadsigns.image_tools.prepare:main"
+rs-preview = "roadsigns.image_tools.preview:main"
+rs-train = "roadsigns.training.run:main"
+rs-predict = "roadsigns.evaluation.predict:main"
+rs-evaluate = "roadsigns.evaluation.metrics:main"
+rs-analyze = "roadsigns.analysis.report:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = ["integration: optional Ultralytics adapter checks using synthetic data, no training"]
+
+[tool.ruff]
+target-version = "py39"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

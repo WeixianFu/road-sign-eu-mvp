@@ -1,0 +1,114 @@
+[
+  {
+    "old_id": 3,
+    "old_name": "regulatory--maximum-speed-limit-60",
+    "source_classes": {
+      "133": "regulatory--maximum-speed-limit-60--g1",
+      "270": "regulatory--maximum-speed-limit-led-60--g1"
+    }
+  },
+  {
+    "old_id": 6,
+    "old_name": "regulatory--maximum-speed-limit-80",
+    "source_classes": {
+      "207": "regulatory--maximum-speed-limit-80--g1",
+      "291": "regulatory--maximum-speed-limit-led-80--g1"
+    }
+  },
+  {
+    "old_id": 12,
+    "old_name": "regulatory--maximum-speed-limit-100",
+    "source_classes": {
+      "121": "regulatory--maximum-speed-limit-100--g1",
+      "327": "regulatory--maximum-speed-limit-led-100--g1",
+      "342": "regulatory--maximum-speed-limit-100--g3"
+    }
+  },
+  {
+    "old_id": 88,
+    "old_name": "regulatory--no-parking",
+    "source_classes": {
+      "20": "regulatory--no-parking--g2",
+      "40": "regulatory--no-parking--g1",
+      "61": "regulatory--no-parking--g5",
+      "304": "regulatory--no-stopping--g4"
+    }
+  },
+  {
+    "old_id": 93,
+    "old_name": "complementary--chevron-right",
+    "source_classes": {
+      "49": "complementary--chevron-right--g3",
+      "80": "complementary--chevron-right-unsure--g6",
+      "81": "complementary--chevron-right--g5",
+      "82": "complementary--chevron-right--g1",
+      "87": "complementary--chevron-right--g4"
+    }
+  },
+  {
+    "old_id": 96,
+    "old_name": "regulatory--turn-right",
+    "source_classes": {
+      "28": "regulatory--turn-right-ahead--g1",
+      "104": "regulatory--turn-right--g2",
+      "112": "regulatory--turn-right--g3",
+      "137": "regulatory--turn-right-ahead--g2",
+      "146": "regulatory--turn-right--g1"
+    }
+  },
+  {
+    "old_id": 97,
+    "old_name": "warning--railroad-crossing",
+    "source_classes": {
+      "9": "warning--railroad-crossing--g1",
+      "64": "warning--railroad-crossing-without-barriers--g4",
+      "96": "warning--railroad-crossing-with-barriers--g1",
+      "223": "warning--railroad-crossing-without-barriers--g3",
+      "226": "warning--railroad-crossing--g3",
+      "264": "warning--railroad-crossing--g4",
+      "284": "warning--railroad-crossing-with-barriers--g2",
+      "333": "warning--railroad-crossing-without-barriers--g1",
+      "387": "warning--railroad-crossing-with-barriers--g4"
+    }
+  },
+  {
+    "old_id": 102,
+    "old_name": "regulatory--turn-left",
+    "source_classes": {
+      "19": "regulatory--turn-left--g2",
+      "44": "regulatory--turn-left-ahead--g1",
+      "100": "regulatory--turn-left--g1",
+      "101": "regulatory--turn-left--g3"
+    }
+  },
+  {
+    "old_id": 107,
+    "old_name": "regulatory--bicycles-only",
+    "source_classes": {
+      "191": "regulatory--bicycles-only--g1",
+      "290": "regulatory--bicycles-only--g2",
+      "296": "regulatory--mopeds-and-bicycles-only--g1",
+      "391": "regulatory--bicycles-only--g3"
+    }
+  },
+  {
+    "old_id": 110,
+    "old_name": "regulatory--bicycles-and-pedestrians-path",
+    "source_classes": {
+      "106": "regulatory--shared-path-pedestrians-and-bicycles--g1",
+      "317": "regulatory--dual-path-bicycles-and-pedestrians--g1",
+      "341": "regulatory--dual-path-pedestrians-and-bicycles--g1",
+      "395": "regulatory--shared-path-bicycles-and-pedestrians--g1"
+    }
+  },
+  {
+    "old_id": 117,
+    "old_name": "regulatory--road-closed-to-vehicles",
+    "source_classes": {
+      "159": "regulatory--road-closed--g2",
+      "230": "regulatory--road-closed-to-vehicles--g3",
+      "316": "regulatory--road-closed-to-vehicles--g1",
+      "356": "regulatory--road-closed--g1"
+    }
+  }
+]

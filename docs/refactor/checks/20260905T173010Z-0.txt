@@ -1,0 +1,13 @@
+E731 Do not assign a `lambda` expression, use a `def`
+  --> tests/test_evaluation.py:91:5
+   |
+89 | def test_predictions_in_padding_are_removed():
+90 |     cfg = read_yaml(ROOT / "configs/predict.yaml")
+91 |     backend = lambda _: [np.array([[700, 100, 720, 120, 0.9, 0]], float)]
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+92 |     assert predict_image(Image.new("RGB", (640, 480)), backend, cfg) == []
+   |
+help: Rewrite `backend` as a `def`
+
+Found 1 error.
+No fixes available (1 hidden fix can be enabled with the `--unsafe-fixes` option).

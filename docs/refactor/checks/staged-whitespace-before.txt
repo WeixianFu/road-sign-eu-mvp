@@ -1,0 +1,804 @@
+configs/ontology.csv:1: trailing whitespace.
++source_id,source_name,action,target,reason
+configs/ontology.csv:2: trailing whitespace.
++0,warning--traffic-merges-right--g1,train,warning--traffic-merges-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:3: trailing whitespace.
++1,warning--added-lane-right--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:4: trailing whitespace.
++2,warning--playground--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:5: trailing whitespace.
++3,other-sign,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:6: trailing whitespace.
++4,regulatory--no-stopping--g15,train,regulatory--no-stopping,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:7: trailing whitespace.
++5,regulatory--priority-road--g4,train,regulatory--priority-road,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:8: trailing whitespace.
++6,warning--pedestrian-stumble-train--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:9: trailing whitespace.
++7,regulatory--maximum-speed-limit-45--g3,train,regulatory--maximum-speed-limit-45,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:10: trailing whitespace.
++8,regulatory--stop--g1,train,regulatory--stop,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:11: trailing whitespace.
++9,warning--railroad-crossing--g1,train,warning--railroad-crossing,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:12: trailing whitespace.
++10,information--end-of-built-up-area--g1,train,information--end-of-built-up-area,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:13: trailing whitespace.
++11,regulatory--pedestrians-only--g1,train,regulatory--pedestrians-only,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:14: trailing whitespace.
++12,regulatory--no-entry--g1,train,regulatory--no-entry,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:15: trailing whitespace.
++13,regulatory--one-way-straight--g1,train,regulatory--one-way-straight,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:16: trailing whitespace.
++14,complementary--maximum-speed-limit-15--g1,train,complementary--maximum-speed-limit-15,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:17: trailing whitespace.
++15,regulatory--keep-right--g4,train,regulatory--keep-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:18: trailing whitespace.
++16,regulatory--yield--g1,train,regulatory--yield,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:19: trailing whitespace.
++17,warning--pedestrians-crossing--g10,train,warning--pedestrians-crossing,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:20: trailing whitespace.
++18,regulatory--reversible-lanes--g2,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:21: trailing whitespace.
++19,regulatory--turn-left--g2,train,regulatory--turn-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:22: trailing whitespace.
++20,regulatory--no-parking--g2,train,regulatory--no-parking,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:23: trailing whitespace.
++21,regulatory--one-way-right--g1,train,regulatory--one-way-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:24: trailing whitespace.
++22,regulatory--one-way-left--g1,train,regulatory--one-way-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:25: trailing whitespace.
++23,warning--divided-highway-ends--g1,train,warning--divided-highway-ends,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:26: trailing whitespace.
++24,regulatory--maximum-speed-limit-55--g2,train,regulatory--maximum-speed-limit-55,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:27: trailing whitespace.
++25,information--pedestrians-crossing--g1,train,information--pedestrians-crossing,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:28: trailing whitespace.
++26,regulatory--no-right-turn--g1,train,regulatory--no-right-turn,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:29: trailing whitespace.
++27,information--tram-bus-stop--g2,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:30: trailing whitespace.
++28,regulatory--turn-right-ahead--g1,train,regulatory--turn-right-ahead,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:31: trailing whitespace.
++29,regulatory--no-overtaking--g1,train,regulatory--no-overtaking,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:32: trailing whitespace.
++30,regulatory--height-limit--g1,train,regulatory--height-limit,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:33: trailing whitespace.
++31,warning--domestic-animals--g3,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:34: trailing whitespace.
++32,warning--traffic-merges-left--g1,train,warning--traffic-merges-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:35: trailing whitespace.
++33,regulatory--maximum-speed-limit-35--g2,train,regulatory--maximum-speed-limit-35,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:36: trailing whitespace.
++34,regulatory--keep-right--g1,train,regulatory--keep-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:37: trailing whitespace.
++35,complementary--priority-route-at-intersection--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:38: trailing whitespace.
++36,warning--texts--g1,train,warning--texts,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:39: trailing whitespace.
++37,complementary--maximum-speed-limit-20--g1,train,complementary--maximum-speed-limit-20,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:40: trailing whitespace.
++38,information--disabled-persons--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:41: trailing whitespace.
++39,warning--crossroads--g1,train,warning--crossroads,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:42: trailing whitespace.
++40,regulatory--no-parking--g1,train,regulatory--no-parking,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:43: trailing whitespace.
++41,warning--roadworks--g1,train,warning--roadworks,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:44: trailing whitespace.
++42,complementary--turn-left--g2,train,complementary--turn-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:45: trailing whitespace.
++43,warning--double-curve-first-right--g1,train,warning--double-curve-first-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:46: trailing whitespace.
++44,regulatory--turn-left-ahead--g1,train,regulatory--turn-left-ahead,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:47: trailing whitespace.
++45,information--parking--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:48: trailing whitespace.
++46,regulatory--no-motorcycles--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:49: trailing whitespace.
++47,complementary--chevron-left--g2,train,complementary--chevron-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:50: trailing whitespace.
++48,complementary--chevron-left--g3,train,complementary--chevron-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:51: trailing whitespace.
++49,complementary--chevron-right--g3,train,complementary--chevron-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:52: trailing whitespace.
++50,information--end-of-motorway--g1,train,information--end-of-motorway,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:53: trailing whitespace.
++51,regulatory--maximum-speed-limit-50--g1,train,regulatory--maximum-speed-limit-50,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:54: trailing whitespace.
++52,warning--texts--g3,train,warning--texts,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:55: trailing whitespace.
++53,warning--junction-with-a-side-road-acute-left--g1,train,warning--junction-with-a-side-road-acute-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:56: trailing whitespace.
++54,regulatory--no-heavy-goods-vehicles--g2,train,regulatory--no-heavy-goods-vehicles,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:57: trailing whitespace.
++55,regulatory--roundabout--g1,train,regulatory--roundabout,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:58: trailing whitespace.
++56,warning--texts--g2,train,warning--texts,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:59: trailing whitespace.
++57,warning--pedestrians-crossing--g4,train,warning--pedestrians-crossing,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:60: trailing whitespace.
++58,complementary--keep-left--g1,train,complementary--keep-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:61: trailing whitespace.
++59,warning--slippery-road-surface--g1,train,warning--slippery-road-surface,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:62: trailing whitespace.
++60,warning--double-curve-first-right--g2,train,warning--double-curve-first-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:63: trailing whitespace.
++61,regulatory--no-parking--g5,train,regulatory--no-parking,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:64: trailing whitespace.
++62,complementary--obstacle-delineator--g2,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:65: trailing whitespace.
++63,regulatory--keep-left--g1,train,regulatory--keep-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:66: trailing whitespace.
++64,warning--railroad-crossing-without-barriers--g4,train,warning--railroad-crossing-without-barriers,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:67: trailing whitespace.
++65,complementary--chevron-left--g1,train,complementary--chevron-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:68: trailing whitespace.
++66,regulatory--end-of-prohibition--g1,train,regulatory--end-of-prohibition,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:69: trailing whitespace.
++67,warning--junction-with-a-side-road-perpendicular-right--g1,train,warning--junction-with-a-side-road-perpendicular-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:70: trailing whitespace.
++68,complementary--obstacle-delineator--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:71: trailing whitespace.
++69,regulatory--maximum-speed-limit-45--g1,train,regulatory--maximum-speed-limit-45,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:72: trailing whitespace.
++70,regulatory--weight-limit--g1,train,regulatory--weight-limit,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:73: trailing whitespace.
++71,warning--slippery-road-surface--g2,train,warning--slippery-road-surface,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:74: trailing whitespace.
++72,complementary--distance--g3,train,complementary--distance,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:75: trailing whitespace.
++73,warning--junction-with-a-side-road-perpendicular-left--g3,train,warning--junction-with-a-side-road-perpendicular-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:76: trailing whitespace.
++74,regulatory--go-straight--g1,train,regulatory--go-straight,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:77: trailing whitespace.
++75,information--road-bump--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:78: trailing whitespace.
++76,warning--children--g1,train,warning--children,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:79: trailing whitespace.
++77,regulatory--maximum-speed-limit-40--g1,train,regulatory--maximum-speed-limit-40,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:80: trailing whitespace.
++78,regulatory--no-buses--g3,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:81: trailing whitespace.
++79,regulatory--no-heavy-goods-vehicles--g4,train,regulatory--no-heavy-goods-vehicles,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:82: trailing whitespace.
++80,complementary--chevron-right-unsure--g6,review,,Source chevron-right-unsure is not a confirmed directional label.
+configs/ontology.csv:83: trailing whitespace.
++81,complementary--chevron-right--g5,train,complementary--chevron-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:84: trailing whitespace.
++82,complementary--chevron-right--g1,train,complementary--chevron-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:85: trailing whitespace.
++83,information--stairs--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:86: trailing whitespace.
++84,warning--curve-right--g1,train,warning--curve-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:87: trailing whitespace.
++85,regulatory--maximum-speed-limit-30--g1,train,regulatory--maximum-speed-limit-30,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:88: trailing whitespace.
++86,complementary--pass-right--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:89: trailing whitespace.
++87,complementary--chevron-right--g4,train,complementary--chevron-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:90: trailing whitespace.
++88,warning--t-roads--g1,train,warning--t-roads,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:91: trailing whitespace.
++89,regulatory--no-u-turn--g2,train,regulatory--no-u-turn,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:92: trailing whitespace.
++90,warning--junction-with-a-side-road-perpendicular-right--g3,train,warning--junction-with-a-side-road-perpendicular-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:93: trailing whitespace.
++91,warning--horizontal-alignment-right--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:94: trailing whitespace.
++92,warning--pedestrians-crossing--g1,train,warning--pedestrians-crossing,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:95: trailing whitespace.
++93,regulatory--keep-left--g2,train,regulatory--keep-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:96: trailing whitespace.
++94,warning--wombat-crossing--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:97: trailing whitespace.
++95,regulatory--no-hawkers--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:98: trailing whitespace.
++96,warning--railroad-crossing-with-barriers--g1,train,warning--railroad-crossing-with-barriers,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:99: trailing whitespace.
++97,warning--uneven-road--g2,train,warning--uneven-road,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:100: trailing whitespace.
++98,complementary--extent-of-prohibition-area-both-direction--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:101: trailing whitespace.
++99,warning--t-roads--g2,train,warning--t-roads,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:102: trailing whitespace.
++100,regulatory--turn-left--g1,train,regulatory--turn-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:103: trailing whitespace.
++101,regulatory--turn-left--g3,train,regulatory--turn-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:104: trailing whitespace.
++102,warning--roundabout--g1,train,warning--roundabout,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:105: trailing whitespace.
++103,information--parking--g3,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:106: trailing whitespace.
++104,regulatory--turn-right--g2,train,regulatory--turn-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:107: trailing whitespace.
++105,regulatory--no-motor-vehicles--g4,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:108: trailing whitespace.
++106,regulatory--shared-path-pedestrians-and-bicycles--g1,train,regulatory--shared-path-pedestrians-and-bicycles,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:109: trailing whitespace.
++107,regulatory--no-overtaking--g5,train,regulatory--no-overtaking,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:110: trailing whitespace.
++108,regulatory--maximum-speed-limit-5--g1,train,regulatory--maximum-speed-limit-5,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:111: trailing whitespace.
++109,complementary--go-left--g1,train,complementary--go-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:112: trailing whitespace.
++110,warning--double-curve-first-left--g1,train,warning--double-curve-first-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:113: trailing whitespace.
++111,regulatory--go-straight-or-turn-left--g2,train,regulatory--go-straight-or-turn-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:114: trailing whitespace.
++112,regulatory--turn-right--g3,train,regulatory--turn-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:115: trailing whitespace.
++113,information--interstate-route--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:116: trailing whitespace.
++114,regulatory--lane-control--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:117: trailing whitespace.
++115,warning--road-bump--g2,train,warning--road-bump,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:118: trailing whitespace.
++116,warning--roadworks--g3,train,warning--roadworks,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:119: trailing whitespace.
++117,regulatory--one-way-left--g3,train,regulatory--one-way-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:120: trailing whitespace.
++118,warning--narrow-bridge--g1,train,warning--narrow-bridge,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:121: trailing whitespace.
++119,complementary--maximum-speed-limit-50--g1,train,complementary--maximum-speed-limit-50,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:122: trailing whitespace.
++120,warning--curve-left--g2,train,warning--curve-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:123: trailing whitespace.
++121,regulatory--maximum-speed-limit-100--g1,train,regulatory--maximum-speed-limit-100,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:124: trailing whitespace.
++122,regulatory--maximum-speed-limit-120--g1,train,regulatory--maximum-speed-limit-120,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:125: trailing whitespace.
++123,information--dead-end--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:126: trailing whitespace.
++124,complementary--maximum-speed-limit-55--g1,train,complementary--maximum-speed-limit-55,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:127: trailing whitespace.
++125,warning--junction-with-a-side-road-acute-right--g1,train,warning--junction-with-a-side-road-acute-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:128: trailing whitespace.
++126,regulatory--maximum-speed-limit-70--g1,train,regulatory--maximum-speed-limit-70,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:129: trailing whitespace.
++127,regulatory--no-u-turn--g3,train,regulatory--no-u-turn,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:130: trailing whitespace.
++128,regulatory--no-right-turn--g2,train,regulatory--no-right-turn,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:131: trailing whitespace.
++129,regulatory--no-stopping--g5,train,regulatory--no-stopping,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:132: trailing whitespace.
++130,warning--roadworks--g2,train,warning--roadworks,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:133: trailing whitespace.
++131,complementary--go-right--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:134: trailing whitespace.
++132,warning--wild-animals--g4,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:135: trailing whitespace.
++133,regulatory--maximum-speed-limit-60--g1,train,regulatory--maximum-speed-limit-60,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:136: trailing whitespace.
++134,information--bike-route--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:137: trailing whitespace.
++135,information--food--g2,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:138: trailing whitespace.
++136,regulatory--go-straight-or-turn-left--g3,train,regulatory--go-straight-or-turn-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:139: trailing whitespace.
++137,regulatory--turn-right-ahead--g2,train,regulatory--turn-right-ahead,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:140: trailing whitespace.
++138,regulatory--no-stopping--g2,train,regulatory--no-stopping,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:141: trailing whitespace.
++139,regulatory--give-way-to-oncoming-traffic--g1,train,regulatory--give-way-to-oncoming-traffic,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:142: trailing whitespace.
++140,warning--children--g2,train,warning--children,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:143: trailing whitespace.
++141,complementary--maximum-speed-limit-35--g1,train,complementary--maximum-speed-limit-35,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:144: trailing whitespace.
++142,warning--road-bump--g1,train,warning--road-bump,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:145: trailing whitespace.
++143,regulatory--no-u-turn--g1,train,regulatory--no-u-turn,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:146: trailing whitespace.
++144,warning--pass-left-or-right--g2,train,warning--pass-left-or-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:147: trailing whitespace.
++145,regulatory--no-overtaking--g2,train,regulatory--no-overtaking,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:148: trailing whitespace.
++146,regulatory--turn-right--g1,train,regulatory--turn-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:149: trailing whitespace.
++147,warning--curve-right--g2,train,warning--curve-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:150: trailing whitespace.
++148,regulatory--no-turns--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:151: trailing whitespace.
++149,regulatory--no-turn-on-red--g3,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:152: trailing whitespace.
++150,regulatory--no-parking-or-no-stopping--g2,review,,Source combines no-parking and no-stopping; image review required.
+configs/ontology.csv:153: trailing whitespace.
++151,regulatory--stop-here-on-red-or-flashing-light--g2,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:154: trailing whitespace.
++152,regulatory--maximum-speed-limit-25--g2,train,regulatory--maximum-speed-limit-25,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:155: trailing whitespace.
++153,warning--junction-with-a-side-road-perpendicular-left--g1,train,warning--junction-with-a-side-road-perpendicular-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:156: trailing whitespace.
++154,warning--winding-road-first-right--g1,train,warning--winding-road-first-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:157: trailing whitespace.
++155,warning--accidental-area-unsure--g2,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:158: trailing whitespace.
++156,regulatory--no-overtaking--g4,train,regulatory--no-overtaking,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:159: trailing whitespace.
++157,warning--school-zone--g2,train,warning--school-zone,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:160: trailing whitespace.
++158,regulatory--wrong-way--g1,train,regulatory--wrong-way,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:161: trailing whitespace.
++159,regulatory--road-closed--g2,train,regulatory--road-closed,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:162: trailing whitespace.
++160,regulatory--no-stopping--g8,train,regulatory--no-stopping,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:163: trailing whitespace.
++161,complementary--distance--g1,train,complementary--distance,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:164: trailing whitespace.
++162,warning--emergency-vehicles--g1,train,warning--emergency-vehicles,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:165: trailing whitespace.
++163,warning--kangaloo-crossing--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:166: trailing whitespace.
++164,complementary--maximum-speed-limit-30--g1,train,complementary--maximum-speed-limit-30,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:167: trailing whitespace.
++165,warning--turn-right--g1,train,warning--turn-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:168: trailing whitespace.
++166,regulatory--truck-speed-limit-60--g1,train,regulatory--truck-speed-limit-60,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:169: trailing whitespace.
++167,regulatory--priority-over-oncoming-vehicles--g1,train,regulatory--priority-over-oncoming-vehicles,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:170: trailing whitespace.
++168,information--pedestrians-crossing--g2,train,information--pedestrians-crossing,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:171: trailing whitespace.
++169,information--parking--g5,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:172: trailing whitespace.
++170,information--children--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:173: trailing whitespace.
++171,regulatory--passing-lane-ahead--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:174: trailing whitespace.
++172,regulatory--no-motor-vehicles-except-motorcycles--g2,train,regulatory--no-motor-vehicles-except-motorcycles,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:175: trailing whitespace.
++173,information--safety-area--g2,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:176: trailing whitespace.
++174,warning--roundabout--g25,train,warning--roundabout,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:177: trailing whitespace.
++175,regulatory--no-left-turn--g1,train,regulatory--no-left-turn,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:178: trailing whitespace.
++176,warning--roadworks--g4,train,warning--roadworks,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:179: trailing whitespace.
++177,complementary--trucks--g1,train,complementary--trucks,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:180: trailing whitespace.
++178,regulatory--go-straight--g3,train,regulatory--go-straight,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:181: trailing whitespace.
++179,warning--steep-ascent--g7,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:182: trailing whitespace.
++180,warning--divided-highway-ends--g2,train,warning--divided-highway-ends,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:183: trailing whitespace.
++181,information--parking--g45,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:184: trailing whitespace.
++182,regulatory--buses-only--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:185: trailing whitespace.
++183,regulatory--maximum-speed-limit-20--g1,train,regulatory--maximum-speed-limit-20,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:186: trailing whitespace.
++184,warning--road-narrows--g1,train,warning--road-narrows,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:187: trailing whitespace.
++185,warning--road-narrows-left--g1,train,warning--road-narrows-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:188: trailing whitespace.
++186,complementary--accident-area--g3,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:189: trailing whitespace.
++187,warning--other-danger--g1,train,warning--other-danger,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:190: trailing whitespace.
++188,regulatory--one-way-left--g2,train,regulatory--one-way-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:191: trailing whitespace.
++189,warning--road-narrows-left--g2,train,warning--road-narrows-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:192: trailing whitespace.
++190,warning--trucks-crossing--g1,train,warning--trucks-crossing,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:193: trailing whitespace.
++191,regulatory--bicycles-only--g1,train,regulatory--bicycles-only,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:194: trailing whitespace.
++192,complementary--maximum-speed-limit-70--g1,train,complementary--maximum-speed-limit-70,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:195: trailing whitespace.
++193,warning--curve-left--g1,train,warning--curve-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:196: trailing whitespace.
++194,warning--domestic-animals--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:197: trailing whitespace.
++195,regulatory--maximum-speed-limit-30--g3,train,regulatory--maximum-speed-limit-30,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:198: trailing whitespace.
++196,warning--road-narrows-right--g2,train,warning--road-narrows-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:199: trailing whitespace.
++197,regulatory--keep-right--g6,train,regulatory--keep-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:200: trailing whitespace.
++198,information--living-street--g1,train,information--living-street,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:201: trailing whitespace.
++199,complementary--tow-away-zone--g1,train,complementary--tow-away-zone,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:202: trailing whitespace.
++200,regulatory--triple-lanes-turn-left-center-lane--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:203: trailing whitespace.
++201,regulatory--maximum-speed-limit-90--g1,train,regulatory--maximum-speed-limit-90,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:204: trailing whitespace.
++202,complementary--both-directions--g1,train,complementary--both-directions,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:205: trailing whitespace.
++203,complementary--maximum-speed-limit-45--g1,train,complementary--maximum-speed-limit-45,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:206: trailing whitespace.
++204,warning--turn-left--g1,train,warning--turn-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:207: trailing whitespace.
++205,information--limited-access-road--g1,train,information--limited-access-road,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:208: trailing whitespace.
++206,regulatory--no-heavy-goods-vehicles--g1,train,regulatory--no-heavy-goods-vehicles,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:209: trailing whitespace.
++207,regulatory--maximum-speed-limit-80--g1,train,regulatory--maximum-speed-limit-80,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:210: trailing whitespace.
++208,complementary--maximum-speed-limit-75--g1,train,complementary--maximum-speed-limit-75,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:211: trailing whitespace.
++209,regulatory--dual-lanes-go-straight-on-right--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:212: trailing whitespace.
++210,regulatory--do-not-block-intersection--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:213: trailing whitespace.
++211,regulatory--radar-enforced--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:214: trailing whitespace.
++212,warning--traffic-merges-right--g2,train,warning--traffic-merges-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:215: trailing whitespace.
++213,regulatory--stop--g10,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:216: trailing whitespace.
++214,regulatory--go-straight-or-turn-left--g1,train,regulatory--go-straight-or-turn-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:217: trailing whitespace.
++215,regulatory--no-straight-through--g2,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:218: trailing whitespace.
++216,regulatory--end-of-maximum-speed-limit-70--g2,train,regulatory--end-of-maximum-speed-limit-70,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:219: trailing whitespace.
++217,regulatory--minimum-safe-distance--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:220: trailing whitespace.
++218,regulatory--no-turn-on-red--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:221: trailing whitespace.
++219,regulatory--stop-signals--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:222: trailing whitespace.
++220,information--gas-station--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:223: trailing whitespace.
++221,regulatory--end-of-speed-limit-zone--g1,train,regulatory--end-of-speed-limit-zone,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:224: trailing whitespace.
++222,warning--two-way-traffic--g1,train,warning--two-way-traffic,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:225: trailing whitespace.
++223,warning--railroad-crossing-without-barriers--g3,train,warning--railroad-crossing-without-barriers,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:226: trailing whitespace.
++224,information--hospital--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:227: trailing whitespace.
++225,warning--stop-ahead--g9,train,warning--stop-ahead,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:228: trailing whitespace.
++226,warning--railroad-crossing--g3,train,warning--railroad-crossing,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:229: trailing whitespace.
++227,information--motorway--g1,train,information--motorway,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:230: trailing whitespace.
++228,information--emergency-facility--g2,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:231: trailing whitespace.
++229,warning--road-widens--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:232: trailing whitespace.
++230,regulatory--road-closed-to-vehicles--g3,train,regulatory--road-closed-to-vehicles,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:233: trailing whitespace.
++231,information--highway-exit--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:234: trailing whitespace.
++232,regulatory--no-turn-on-red--g2,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:235: trailing whitespace.
++233,regulatory--no-pedestrians--g2,train,regulatory--no-pedestrians,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:236: trailing whitespace.
++234,regulatory--width-limit--g1,train,regulatory--width-limit,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:237: trailing whitespace.
++235,warning--hairpin-curve-right--g1,train,warning--hairpin-curve-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:238: trailing whitespace.
++236,complementary--keep-right--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:239: trailing whitespace.
++237,warning--junction-with-a-side-road-perpendicular-left--g4,train,warning--junction-with-a-side-road-perpendicular-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:240: trailing whitespace.
++238,warning--flaggers-in-road--g1,train,warning--flaggers-in-road,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:241: trailing whitespace.
++239,warning--wild-animals--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:242: trailing whitespace.
++240,warning--traffic-signals--g4,train,warning--traffic-signals,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:243: trailing whitespace.
++241,warning--crossroads--g3,train,warning--crossroads,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:244: trailing whitespace.
++242,warning--two-way-traffic--g2,train,warning--two-way-traffic,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:245: trailing whitespace.
++243,warning--traffic-signals--g2,train,warning--traffic-signals,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:246: trailing whitespace.
++244,regulatory--one-way-right--g2,train,regulatory--one-way-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:247: trailing whitespace.
++245,regulatory--no-overtaking-by-heavy-goods-vehicles--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:248: trailing whitespace.
++246,complementary--distance--g2,train,complementary--distance,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:249: trailing whitespace.
++247,warning--double-reverse-curve-right--g1,train,warning--double-reverse-curve-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:250: trailing whitespace.
++248,regulatory--one-way-right--g3,train,regulatory--one-way-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:251: trailing whitespace.
++249,warning--double-curve-first-left--g2,train,warning--double-curve-first-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:252: trailing whitespace.
++250,complementary--except-bicycles--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:253: trailing whitespace.
++251,warning--traffic-signals--g1,train,warning--traffic-signals,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:254: trailing whitespace.
++252,complementary--chevron-left--g5,train,complementary--chevron-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:255: trailing whitespace.
++253,warning--road-widens-right--g1,train,warning--road-widens-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:256: trailing whitespace.
++254,regulatory--maximum-speed-limit-40--g6,train,regulatory--maximum-speed-limit-40,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:257: trailing whitespace.
++255,warning--horizontal-alignment-left--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:258: trailing whitespace.
++256,regulatory--no-bicycles--g1,train,regulatory--no-bicycles,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:259: trailing whitespace.
++257,regulatory--maximum-speed-limit-15--g1,train,regulatory--maximum-speed-limit-15,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:260: trailing whitespace.
++258,regulatory--no-straight-through--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:261: trailing whitespace.
++259,regulatory--parking-restrictions--g2,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:262: trailing whitespace.
++260,regulatory--no-parking-or-no-stopping--g1,review,,Source combines no-parking and no-stopping; image review required.
+configs/ontology.csv:263: trailing whitespace.
++261,warning--uneven-road--g6,train,warning--uneven-road,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:264: trailing whitespace.
++262,complementary--go-right--g2,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:265: trailing whitespace.
++263,warning--railroad-intersection--g3,train,warning--railroad-intersection,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:266: trailing whitespace.
++264,warning--railroad-crossing--g4,train,warning--railroad-crossing,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:267: trailing whitespace.
++265,information--airport--g2,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:268: trailing whitespace.
++266,complementary--trucks-turn-right--g1,train,complementary--trucks-turn-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:269: trailing whitespace.
++267,regulatory--end-of-bicycles-only--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:270: trailing whitespace.
++268,warning--road-narrows--g2,train,warning--road-narrows,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:271: trailing whitespace.
++269,warning--pedestrians-crossing--g5,train,warning--pedestrians-crossing,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:272: trailing whitespace.
++270,regulatory--maximum-speed-limit-led-60--g1,train,regulatory--maximum-speed-limit-60,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:273: trailing whitespace.
++271,regulatory--no-parking-or-no-stopping--g3,review,,Source combines no-parking and no-stopping; image review required.
+configs/ontology.csv:274: trailing whitespace.
++272,regulatory--pedestrians-only--g2,train,regulatory--pedestrians-only,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:275: trailing whitespace.
++273,warning--slippery-motorcycles--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:276: trailing whitespace.
++274,regulatory--pass-on-either-side--g2,train,regulatory--pass-on-either-side,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:277: trailing whitespace.
++275,complementary--one-direction-right--g1,train,complementary--one-direction-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:278: trailing whitespace.
++276,warning--pedestrians-crossing--g9,train,warning--pedestrians-crossing,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:279: trailing whitespace.
++277,regulatory--go-straight-or-turn-right--g1,train,regulatory--go-straight-or-turn-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:280: trailing whitespace.
++278,information--end-of-living-street--g1,train,information--end-of-living-street,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:281: trailing whitespace.
++279,information--bus-stop--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:282: trailing whitespace.
++280,warning--winding-road-first-left--g1,train,warning--winding-road-first-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:283: trailing whitespace.
++281,warning--bus-stop-ahead--g3,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:284: trailing whitespace.
++282,warning--double-turn-first-right--g1,train,warning--double-turn-first-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:285: trailing whitespace.
++283,warning--winding-road-first-right--g3,train,warning--winding-road-first-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:286: trailing whitespace.
++284,warning--railroad-crossing-with-barriers--g2,train,warning--railroad-crossing-with-barriers,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:287: trailing whitespace.
++285,regulatory--no-motor-vehicles-except-motorcycles--g1,train,regulatory--no-motor-vehicles-except-motorcycles,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:288: trailing whitespace.
++286,warning--railroad-intersection--g4,train,warning--railroad-intersection,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:289: trailing whitespace.
++287,complementary--turn-right--g2,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:290: trailing whitespace.
++288,regulatory--keep-right--g2,train,regulatory--keep-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:291: trailing whitespace.
++289,warning--bicycles-crossing--g2,train,warning--bicycles-crossing,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:292: trailing whitespace.
++290,regulatory--bicycles-only--g2,train,regulatory--bicycles-only,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:293: trailing whitespace.
++291,regulatory--maximum-speed-limit-led-80--g1,train,regulatory--maximum-speed-limit-80,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:294: trailing whitespace.
++292,warning--height-restriction--g2,train,warning--height-restriction,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:295: trailing whitespace.
++293,regulatory--maximum-speed-limit-50--g6,train,regulatory--maximum-speed-limit-50,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:296: trailing whitespace.
++294,warning--hairpin-curve-right--g4,train,warning--hairpin-curve-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:297: trailing whitespace.
++295,warning--traffic-signals--g3,train,warning--traffic-signals,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:298: trailing whitespace.
++296,regulatory--mopeds-and-bicycles-only--g1,train,regulatory--mopeds-and-bicycles-only,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:299: trailing whitespace.
++297,regulatory--no-left-turn--g2,train,regulatory--no-left-turn,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:300: trailing whitespace.
++298,regulatory--end-of-no-parking--g1,train,regulatory--end-of-no-parking,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:301: trailing whitespace.
++299,regulatory--end-of-priority-road--g1,train,regulatory--end-of-priority-road,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:302: trailing whitespace.
++300,regulatory--no-heavy-goods-vehicles-or-buses--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:303: trailing whitespace.
++301,warning--uneven-roads-ahead--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:304: trailing whitespace.
++302,warning--hairpin-curve-left--g1,train,warning--hairpin-curve-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:305: trailing whitespace.
++303,information--trailer-camping--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:306: trailing whitespace.
++304,regulatory--no-stopping--g4,review,,Legacy manual no-parking override conflicts with source no-stopping name; inspect images.
+configs/ontology.csv:307: trailing whitespace.
++305,regulatory--no-pedestrians-or-bicycles--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:308: trailing whitespace.
++306,regulatory--no-heavy-goods-vehicles--g5,train,regulatory--no-heavy-goods-vehicles,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:309: trailing whitespace.
++307,warning--other-danger--g3,train,warning--other-danger,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:310: trailing whitespace.
++308,regulatory--dual-lanes-go-straight-on-left--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:311: trailing whitespace.
++309,regulatory--u-turn--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:312: trailing whitespace.
++310,complementary--maximum-speed-limit-40--g1,train,complementary--maximum-speed-limit-40,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:313: trailing whitespace.
++311,regulatory--stop-here-on-red-or-flashing-light--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:314: trailing whitespace.
++312,information--parking--g6,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:315: trailing whitespace.
++313,regulatory--no-pedestrians--g3,train,regulatory--no-pedestrians,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:316: trailing whitespace.
++314,warning--traffic-merges-left--g2,train,warning--traffic-merges-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:317: trailing whitespace.
++315,regulatory--text-four-lines--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:318: trailing whitespace.
++316,regulatory--road-closed-to-vehicles--g1,train,regulatory--road-closed-to-vehicles,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:319: trailing whitespace.
++317,regulatory--dual-path-bicycles-and-pedestrians--g1,train,regulatory--dual-path-bicycles-and-pedestrians,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:320: trailing whitespace.
++318,regulatory--maximum-speed-limit-40--g3,train,regulatory--maximum-speed-limit-40,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:321: trailing whitespace.
++319,information--parking--g2,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:322: trailing whitespace.
++320,warning--bicycles-crossing--g3,train,warning--bicycles-crossing,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:323: trailing whitespace.
++321,regulatory--pass-on-either-side--g1,train,regulatory--pass-on-either-side,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:324: trailing whitespace.
++322,regulatory--no-bicycles--g3,train,regulatory--no-bicycles,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:325: trailing whitespace.
++323,warning--pass-left-or-right--g1,train,warning--pass-left-or-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:326: trailing whitespace.
++324,regulatory--maximum-speed-limit-10--g1,train,regulatory--maximum-speed-limit-10,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:327: trailing whitespace.
++325,complementary--chevron-left--g4,train,complementary--chevron-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:328: trailing whitespace.
++326,warning--falling-rocks-or-debris-right--g2,train,warning--falling-rocks-or-debris-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:329: trailing whitespace.
++327,regulatory--maximum-speed-limit-led-100--g1,train,regulatory--maximum-speed-limit-100,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:330: trailing whitespace.
++328,warning--pedestrians-crossing--g12,train,warning--pedestrians-crossing,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:331: trailing whitespace.
++329,complementary--buses--g1,train,complementary--buses,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:332: trailing whitespace.
++330,warning--road-narrows-right--g1,train,warning--road-narrows-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:333: trailing whitespace.
++331,information--highway-interstate-route--g2,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:334: trailing whitespace.
++332,warning--y-roads--g1,train,warning--y-roads,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:335: trailing whitespace.
++333,warning--railroad-crossing-without-barriers--g1,train,warning--railroad-crossing-without-barriers,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:336: trailing whitespace.
++334,warning--narrow-bridge--g3,train,warning--narrow-bridge,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:337: trailing whitespace.
++335,regulatory--maximum-speed-limit-110--g1,train,regulatory--maximum-speed-limit-110,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:338: trailing whitespace.
++336,regulatory--no-right-turn--g3,train,regulatory--no-right-turn,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:339: trailing whitespace.
++337,information--telephone--g2,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:340: trailing whitespace.
++338,regulatory--stop--g2,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:341: trailing whitespace.
++339,regulatory--left-turn-yield-on-green--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:342: trailing whitespace.
++340,warning--dual-lanes-right-turn-or-go-straight--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:343: trailing whitespace.
++341,regulatory--dual-path-pedestrians-and-bicycles--g1,train,regulatory--dual-path-pedestrians-and-bicycles,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:344: trailing whitespace.
++342,regulatory--maximum-speed-limit-100--g3,train,regulatory--maximum-speed-limit-100,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:345: trailing whitespace.
++343,complementary--one-direction-left--g1,train,complementary--one-direction-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:346: trailing whitespace.
++344,regulatory--no-left-turn--g3,train,regulatory--no-left-turn,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:347: trailing whitespace.
++345,regulatory--go-straight-or-turn-right--g3,train,regulatory--go-straight-or-turn-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:348: trailing whitespace.
++346,warning--dip--g2,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:349: trailing whitespace.
++347,warning--bicycles-crossing--g1,train,warning--bicycles-crossing,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:350: trailing whitespace.
++348,regulatory--no-motorcycles--g2,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:351: trailing whitespace.
++349,regulatory--no-pedestrians--g1,train,regulatory--no-pedestrians,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:352: trailing whitespace.
++350,warning--falling-rocks-or-debris-right--g1,train,warning--falling-rocks-or-debris-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:353: trailing whitespace.
++351,warning--winding-road-first-left--g2,train,warning--winding-road-first-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:354: trailing whitespace.
++352,regulatory--end-of-maximum-speed-limit-30--g2,train,regulatory--end-of-maximum-speed-limit-30,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:355: trailing whitespace.
++353,warning--loop-270-degree--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:356: trailing whitespace.
++354,complementary--maximum-speed-limit-25--g1,train,complementary--maximum-speed-limit-25,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:357: trailing whitespace.
++355,warning--falling-rocks-or-debris-right--g4,train,warning--falling-rocks-or-debris-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:358: trailing whitespace.
++356,regulatory--road-closed--g1,train,regulatory--road-closed,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:359: trailing whitespace.
++357,regulatory--maximum-speed-limit-65--g2,train,regulatory--maximum-speed-limit-65,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:360: trailing whitespace.
++358,warning--trail-crossing--g2,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:361: trailing whitespace.
++359,regulatory--no-vehicles-carrying-dangerous-goods--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:362: trailing whitespace.
++360,information--end-of-limited-access-road--g1,train,information--end-of-limited-access-road,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:363: trailing whitespace.
++361,information--lodging--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:364: trailing whitespace.
++362,information--telephone--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:365: trailing whitespace.
++363,information--central-lane--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:366: trailing whitespace.
++364,warning--offset-roads--g3,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:367: trailing whitespace.
++365,regulatory--no-motor-vehicle-trailers--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:368: trailing whitespace.
++366,regulatory--roundabout--g2,train,regulatory--roundabout,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:369: trailing whitespace.
++367,warning--roadworks--g6,train,warning--roadworks,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:370: trailing whitespace.
++368,warning--crossroads-with-priority-to-the-right--g1,train,warning--crossroads-with-priority-to-the-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:371: trailing whitespace.
++369,information--no-parking--g3,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:372: trailing whitespace.
++370,information--gas-station--g3,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:373: trailing whitespace.
++371,regulatory--dual-lanes-turn-right-or-straight--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:374: trailing whitespace.
++372,regulatory--maximum-speed-limit-25--g1,train,regulatory--maximum-speed-limit-25,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:375: trailing whitespace.
++373,regulatory--dual-lanes-turn-left-or-straight--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:376: trailing whitespace.
++374,regulatory--no-mopeds-or-bicycles--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:377: trailing whitespace.
++375,regulatory--no-bicycles--g2,train,regulatory--no-bicycles,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:378: trailing whitespace.
++376,warning--horizontal-alignment-right--g3,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:379: trailing whitespace.
++377,information--camp--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:380: trailing whitespace.
++378,warning--pedestrians-crossing--g11,train,warning--pedestrians-crossing,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:381: trailing whitespace.
++379,regulatory--no-motor-vehicles--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:382: trailing whitespace.
++380,warning--shared-lane-motorcycles-bicycles--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:383: trailing whitespace.
++381,information--minimum-speed-40--g1,train,information--minimum-speed-40,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:384: trailing whitespace.
++382,information--dead-end-except-bicycles--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:385: trailing whitespace.
++383,information--airport--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:386: trailing whitespace.
++384,regulatory--do-not-stop-on-tracks--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:387: trailing whitespace.
++385,warning--turn-right--g2,train,warning--turn-right,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:388: trailing whitespace.
++386,warning--trams-crossing--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:389: trailing whitespace.
++387,warning--railroad-crossing-with-barriers--g4,train,warning--railroad-crossing-with-barriers,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:390: trailing whitespace.
++388,regulatory--end-of-maximum-speed-limit-70--g1,train,regulatory--end-of-maximum-speed-limit-70,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:391: trailing whitespace.
++389,regulatory--turning-vehicles-yield-to-pedestrians--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:392: trailing whitespace.
++390,warning--playground--g3,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:393: trailing whitespace.
++391,regulatory--bicycles-only--g3,train,regulatory--bicycles-only,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:394: trailing whitespace.
++392,warning--hairpin-curve-left--g3,train,warning--hairpin-curve-left,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:395: trailing whitespace.
++393,regulatory--end-of-buses-only--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:396: trailing whitespace.
++394,regulatory--dual-lanes-turn-left-no-u-turn--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:397: trailing whitespace.
++395,regulatory--shared-path-bicycles-and-pedestrians--g1,train,regulatory--shared-path-pedestrians-and-bicycles,Merge only equivalent source meanings and visual variants.
+configs/ontology.csv:398: trailing whitespace.
++396,warning--equestrians-crossing--g2,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:399: trailing whitespace.
++397,regulatory--weight-limit-with-trucks--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:400: trailing whitespace.
++398,regulatory--detour-left--g1,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:401: trailing whitespace.
++399,information--end-of-pedestrians-only--g2,exclude,,Retain legacy scope; no geography claim.
+configs/ontology.csv:402: trailing whitespace.
++400,warning--restricted-zone--g1,exclude,,Retain legacy scope; no geography claim.
