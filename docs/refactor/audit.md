@@ -8,7 +8,7 @@
 
 本地未提交的 `scripts/fullval_predict.py`、`notebooks/data_analysis/`、文档改动和 artifacts 也纳入审查。这些内容与 GitHub HEAD 并不完全相同：本地已经有原图预测与分析，不能简单说旧项目完全没有原图评价。
 
-新代码位于独立 worktree，分支为 `codex/europe-pipeline-refactor`。原工作区的未提交修改保持原样；旧实现可从原目录和 Git 历史查看。
+新代码位于独立 worktree，当前分支为 `rebase2`，按用户要求从 `codex/europe-pipeline-refactor` 更名。原工作区的未提交修改保持原样；旧实现可从原目录和 Git 历史查看。
 
 ## 用户确认的交付范围
 

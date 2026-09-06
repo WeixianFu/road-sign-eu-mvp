@@ -5,7 +5,7 @@
 ## 安装
 
 ```bash
-git clone -b codex/europe-pipeline-refactor https://github.com/WeixianFu/road-sign-eu-mvp.git
+git clone -b rebase2 https://github.com/WeixianFu/road-sign-eu-mvp.git
 cd road-sign-eu-mvp
 python3.12 -m venv .venv
 source .venv/bin/activate
