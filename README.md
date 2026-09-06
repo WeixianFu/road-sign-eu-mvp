@@ -1,28 +1,28 @@
-# 欧洲交通标志图片训练
+# European Traffic Sign Image Training
 
-从 MTSD 原图准备数据，训练 YOLOv8，在原图上切片预测，再做 COCO 评价和误报／漏检分析。当前范围是图片；视频、跟踪、OCR 和半监督留到后续。
+Prepare data from original MTSD images, train YOLOv8, run tiled prediction on original images, and evaluate results with COCO metrics and false-positive / false-negative analysis. This iteration covers images. Video, tracking, OCR and semi-supervised training are deferred.
 
-欧洲范围包含瑞士、英国。当前本体有 **153 个目标类别**，地域来源单独记录；这并不表示 MTSD 已经完成欧洲地域筛选。
+The European scope includes Switzerland and the UK. The current ontology has **153 target classes**. Geographic provenance is tracked separately; MTSD has not yet been filtered to verified European images.
 
 ```text
-configs/                 数据、训练、预测配置和唯一类别映射表
+configs/                 Data, training and prediction settings; canonical class mapping
 src/roadsigns/
-  image_tools/           标签、切片、数据构建、图片预览
-  training/              70/30 抽样、小目标 Mosaic、YOLO 训练
-  evaluation/            原图切片预测、标准 COCO 指标
-  analysis/              类别统计、训练曲线摘要、FP/FN 图片
-tests/                   合成图片与适配器测试
-tools/                   完整命令日志、轻量检查
-docs/refactor/           本次审查、操作日志、阶段报告和验证记录
+  image_tools/           Labels, tiling, dataset preparation and image previews
+  training/              70/30 sampling, tiny-safe Mosaic and YOLO training
+  evaluation/            Tiled prediction on original images and standard COCO metrics
+  analysis/              Class counts, training summaries and FP/FN galleries
+tests/                   Synthetic image and adapter tests
+tools/                   Full command logs and lightweight checks
+docs/refactor/           Audit, operation logs, progress reports and validation records
 ```
 
-| 设备 | 工作 |
+| Device | Workload |
 |---|---|
-| MacBook | 查看代码、轻量测试、读取台式机导出的报告 |
-| Ubuntu / RTX 5070 Ti | 准备数据、训练、原图预测与评价 |
-| Linux 远程服务器 | 同一套命令，调整数据路径、设备和 batch |
+| MacBook | Code review, lightweight tests and reports exported from the desktop |
+| Ubuntu / RTX 5070 Ti | Dataset preparation, training, original-image prediction and evaluation |
+| Remote Linux server | The same commands, with data paths, device and batch size configured for the server |
 
-Mac 上的轻量环境不需要 PyTorch：
+The lightweight Mac environment does not require PyTorch:
 
 ```bash
 python3.12 -m venv .venv
@@ -31,17 +31,17 @@ python -m pip install -e '.[dev,evaluate]' -c requirements/constraints.txt
 python tools/check.py
 ```
 
-Ubuntu 的完整安装和训练步骤见 [训练手册](docs/training.md)。原始输入仍使用旧项目的 **401 类 YOLO 原图格式**；新的类别拆分不能从已合并的 core146 标签中还原。
+See the [training guide](docs/training.md) for Ubuntu installation and training. Input uses the original project's **401-class YOLO format with original images**. The new class distinctions cannot be recovered from labels already merged into core146.
 
-依次使用以下入口，各入口都支持 `--help`：
+Run these commands in order. Each supports `--help`:
 
-1. `rs-prepare`：原图、标签 → 1280 切片、合适的整图视图、原图 GT 和数据指纹。
-2. `rs-preview`：核对原图或准备后的标签、切片布局。
-3. `rs-train`：在 Ubuntu／服务器上训练。
-4. `rs-predict`：对原始验证图片切片预测，可从已完成的图片继续。
-5. `rs-evaluate`：COCO AP、逐类指标、小目标召回和 FP/FN 清单。
-6. `rs-analyze`：数据统计、训练摘要、错误样本图。
+1. `rs-prepare`: Convert original images and labels into 1280-pixel tiles, eligible full-image views, original-image ground truth and a dataset fingerprint.
+2. `rs-preview`: Inspect source or prepared labels and tile layouts.
+3. `rs-train`: Train on the Ubuntu desktop or Linux server.
+4. `rs-predict`: Run tiled prediction on original validation images, with recovery from completed images.
+5. `rs-evaluate`: Compute COCO AP, per-class metrics, small-sign recall and FP/FN lists.
+6. `rs-analyze`: Generate dataset statistics, training summaries and error galleries.
 
-[设计与数据约定](docs/design.md) · [类别调整](docs/ontology.md) · [评价与分析](docs/evaluation.md) · [重构审查](docs/refactor/audit.md)
+[Design and data contract](docs/design.md) · [Class mapping changes](docs/ontology.md) · [Evaluation and analysis](docs/evaluation.md) · [Refactor audit](docs/refactor/audit.md)
 
-本项目代码检查使用合成数据。真实 MTSD、RTX 5070 Ti 显存／吞吐、多 GPU 训练和新模型精度需要在目标设备验证；合成测试通过不等于模型已经训练完成。
+Code checks use synthetic data. Real MTSD processing, RTX 5070 Ti memory usage and throughput, multi-GPU training and model accuracy still require validation on the target hardware. Passing synthetic tests does not mean a model has been trained.

@@ -8,5 +8,6 @@
 - Class names, IDs and ontology fingerprints must agree across prepared data, training artifacts, prediction and evaluation. Keep direction, numeric speed and distinct sign meanings separate. Do not infer a speed unit or country from a class name.
 - The Mac is for code review and lightweight synthetic tests. Dataset processing and training run on the Ubuntu RTX 5070 Ti desktop or a configured Linux server. Do not run training or process the real dataset on the Mac.
 - Write concise Python, simple functions and only necessary comments. Validate external inputs once; let errors propagate. Do not add silent fallbacks, broad exception handling or speculative abstractions.
+- Write README files, code comments, docstrings and AGENTS.md in English.
 - Record operations and verification results. During a long refactor, write a progress report every 20 minutes.
 - Video, tracking, OCR and semi-supervised training are outside this iteration. Ask before expanding scope.
